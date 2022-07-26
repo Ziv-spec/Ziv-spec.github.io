@@ -1,0 +1,110 @@
+
+<style>
+  div.wrapper {
+    max-width: calc(800px - (30px * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-family: Arial;
+  }
+</style>
+
+<div class="wrapper">
+<h1>Advice for beginners</h1>
+<p>
+  I have been asked about what advice could I give to beginners learning to program a couple times. 
+  Although I am programming in a non-professional enviorment(never was in a programming job) for around 4-5 years, 
+  I hope that my experience is mostly from my country's education system, along with information from the internet
+  would add up to good advice. 
+</p>
+<p>
+  NOTE: when I refere to "industry" I am making a broad assumption, where education by known institutions is in part 
+  imbeded within a wide range of companies through the culture and teachings of said institutions, and the reverse. 
+  Along with whatever I see online, I might have some bias and your milage may vary.
+</p>
+<h2>Problems in software today</h2>
+<p>
+  My first advice is to first understand where is the industry headed. For that we need to understand what are the problems that observors might not notice.
+</p>
+<p>
+  Firstly, at the time of writing copmlexity is king. Linux is a many million lines of code monolith, 
+  <a href="https://www.youtube.com/watch?v=aVNCgmAsI8c">adobe after effects has grown so complex, speed and stability seems to be a dream</a>.
+  Creating a simple website now requires frameworks with loads of libraries to be "modern", and languages which take a 
+  <a href="https://fasterthanli.me/articles/why-is-my-rust-build-so-slow">long time to compile</a> a simple program are real. 
+  People admire complexity instead of fearing it. 
+</p>
+<p>
+  The decline in software quality and speed has been growing with the abundance of resources. Ever faster chips, 
+  more RAM then ever before, bigger faster GPU's. As we have more resources we can use, the concern of efficiency and 
+  size has dropped, and in it's stead, we care about the programmers efficiency. 
+  Sloppy, slow, bloated it doesn't matter as long as it is the first right? We can improve it later!!
+  The culture around the creation of software seems to revolve around using more tools to solve problems because 
+  they are not capable of solving it themselves.
+  "not reinvent the wheel". Understanding of those tools is an after thought.
+</p>
+<p>
+  Secondly, it is not only the abundance of resources which caused the decline. Computer science is relatively 
+  <a href="https://people.inf.ethz.ch/wirth/Miscellaneous/ComputersAndComputing.pdf">new</a>, and ideas are still being tested. 
+  <a href="https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf">Good ideas</a> exist but as an observor I would categorise 
+  most of them as <a href="https://medium.com/the-long-now-foundation/intellectual-dark-matter-2e5890aa8d8f">lost knowledge</a> with 
+  old programmers holding said information.  We accept that some ideas are good and some are bad, but we don't seem to explain why certain 
+  ideas succeded and some failed, which ones are on the rise and which ones are on the fall. 
+  As a result, people constantly believe already failed ideas and it seems like the only way to know is to uncover the truth on our own. 
+  Unfortunately, language wars are not uncommon, they mostly stem from a lack of a good perspective on the right tool for the job.
+  But I am hopeful, it seems like <a href="https://floooh.github.io/2018/06/02/one-year-of-c.html">there are people who get it</a>.
+</p>
+<p>An important question to ask now is "but why should we care?" computers are getting faster every year, and we have so many programmers 
+  to put the burden of understanding the complex systems. Why is all of this a problem?</p>
+<p>
+  Well... computers are not getting that much faster!! Today the trend for general purpose chips is the increase the number of cores 
+  along with some slight improvments in IPC - Instructions Per Clock.  The slowdown might be cuased because of lack of 
+  <a href="https://www.theregister.com/2022/07/18/electrical_engineers_extinction/">engineers</a> along with technical difficulties we experience. 
+  <br />
+  The traditional way chips have gotten faster is by the exploitation of 
+  <a href="https://youtu.be/Nb2tebYAaOA?t=220">parallelism within code programmers write</a> better proccess nodes and higher clock speeds. 
+  Whether it is by predicting branches, executing multiple instructions at different locations on the hardware, running other code while the cpu 
+  waits for memory using hyperthreading or clock speed and node proccess improvements, today the performance gains from these techniques reach a 
+  plateau. 
+</p>
+<p>
+  We need large architectual changes to drive new innovation in hardware and software. 
+  The lessons learned by both, along with cooperation is exactly what we need to create a more exciting future for software. 
+</p>
+<p>
+  People today are accustomed to slow buggy software. They expect something to not work, to constantly save a document because who knows when the 
+  program will crash, wait until the os starts up, or until the application will open. 
+  <a href="http://exo-blog.blogspot.com/2007/09/what-intel-giveth-microsoft-taketh-away.html">"What Intel giveth, Microsoft taketh away"</a> 
+  is a prime example for where we stand today, and anyone continuing this trajectory is in my opinion doomed to fail. 
+  It is just a matter of time before we reach a limit where these things are unacceptable. When today's programming practices will change for the 
+  better, when people's understanding will deepen, and prejudice around the old ways will go away.  To allow the old giants to collapse under their 
+  own weight.
+</p>
+
+<h2>Finally some advice</h2>
+<p>
+  For one, don't participate in this. 
+  Don't use libraries if you can easily write the solution, refactor code if needed, understand the tools you are using, and try to understand 
+  what is the problem you are trying to solve.  Aside from not using libraries because of "dependency hell", libraries have constraints that 
+  your problem might not have, which will introduce hardships down the line as you are integrating the two. 
+</p>
+<p>
+  Refactoring is key. Like any problem who's solution you don't know in advance, some exploration is needed to better understand the problem. 
+  With that in mind, at some point you will notice a flaw in the design. That flaw if left alone will overtime, create technical debt leading 
+  to complexity.
+</p>
+<p>
+  We must remind ourselves that we solve problems within the domain of computing, as such, knowledge of the hardware is mandatory, algorithems, 
+  data structures, these are bits and pieces of what we have learned to be <i>extremely</i> useful.  Mathmatical tools are of great help when 
+  a problem is hard enough that mathmatical tools can help solve.  
+</p>
+
+<h2>TL;DR</h2>
+<p><i>Complexity is the devil we should eradicate, simplicity is the angel to bring forth salvation.</i></p>
+<p>
+  As programmers we solve problems within the domain of computing, when doing so we deal with the complexity of systems we create and maintain.
+  As such, the best advice I could give is to strive for <i>simplicity</i>, <i>elegance</i>, as we create solutions to problems in our domain. 
+  Simple to read, simple to maintain, simple for the hardware to execute.
+</p>
+
+</div>
