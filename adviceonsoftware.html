@@ -12,63 +12,133 @@
 
 <div class="wrapper">
 <h1>Advice for beginners</h1>
+<h2>Table of contents</h2>
 <p>
-  Topics: 
-    - what we do is solve problems within the domain of computing
-    - why we do it? add value to the system
-    - how we do it? make good trade offs to accomplish our goal
-
-    - trade-offs
-      - Complexity
-        - code-reuse
-        - refactoring
-      - deep understanding
-        - hardware 
-        - tools
-        - use good ideas
-      - surround yourself with people who know more than you 
+<li><a href="#1">Which language should I choose?</a></li>
+<li><a href="#2">So what should I do?</a></li>
+<li><a href="#3">Warning of decline in culture</a></li>
+<li><a href="#4">Code reuse and trade-offs</a></li>
+<li><a href="#5">Appreciate</a></li>
+<li><a href="#6">But so what?</a></li>
+<li><a href="#7">Value</a></li>
+<li><a href="#8">Contributing</a></li>
 </p>
 
+<h2 id="1">Which language should I choose?</h2>
 <p>
-  
-<p>
-  I have been asked about what advice could I give to beginners learning to program a couple times. 
-  Although I am programming in a non-professional enviorment(never was in a programming job) for around 4-5 years, 
-  I hope that my experience is mostly from my country's education system, along with information from the internet
-  would add up to good advice. 
-</p>
-<p>
-  NOTE: when I refere to "industry" I am making a broad assumption, where education by known institutions is in part 
-  imbeded within a wide range of companies through the culture and teachings of said institutions, and the reverse. 
-  Along with whatever I see online, I might have some bias and your milage may vary.
+  A common pitfall for many beginners is they want to pick the "best" language to begin with, to create a "perfect" program.
+  As humans we want to be perfect although we are incapable being so, it is natural but it hinders progress for new programmers.
+  There is no "best" language to pick, just differerent languages for many usecases, no "perfect" code but, code that answers the 
+  constraints placed. So for my first advice, pick a recommended language that many people love and <b>begin coding</b>. 
+  Coding is a skill, the more practice one has, the better intuition he will have for what to do next, making you better than 
+  someone who constantly tries to be "perfect".
 </p>
 
-<h2>Problems in software today</h2>
+<h2 id="2">So what should I do?</h2>
 <p>
-  Firstly, The decline in software quality and speed has been growing with the abundance of resources. Ever faster chips, 
-  more RAM then ever before, bigger faster GPU's. As we have more resources we can use, the concern of efficiency and 
-  size has dropped, and in it's stead, we care about programmers efficiency. Sloppy, slow or bloated it doesn't matter 
-  as long as it is first to launch right? We can improve it later!! This mentality let's complexity grow out of control,
-  allowing this reality <a href="http://exo-blog.blogspot.com/2007/09/what-intel-giveth-microsoft-taketh-away.html">"What Intel giveth, Microsoft taketh away"</a>
+  As a beginner I liked watching tutorials for doing anything, stuck in a loop between a video I was watching and my editor.
+  My advice is to pick a project you want to work on and try to create it. You will most likely learn more when working on 
+  cool projects than when following tutorials and also you will have cool things to show afterwards.
+</p>
+
+<h2 id="3">Warning of decline in culture</h2>
+<p>
+  Usually people subscrible to different ideas and cultures when they are surrounded by them. When the culture advocates
+  for the production of high-quality good products, people will produce high-quality products and yet the software culture 
+  seems to advocate for fast development time at the expense of the user experience.
 </p>
 <p>
-  Secondly, it is not only the abundance of resources which causes the decline. Computer science is relatively 
+  Have you ever had your computer crash? Maybe a program crashed without saving the progress? Or did you notice that your old 
+  computer slows down as you update your computer to newer versions? Did you ever question why a simple app requires so much 
+  space to download even though it seems to be pretty simple? Most people have experienced bugs, crashes, restarts, and big bloated 
+  software that hangs every once in a while. This is the result of the decline in culture, where bad user experience doesn't matter
+  and it has become acceptable to face bugs every once in a while or wait for trivial things to load.
+</p>
+<p>
+  The growing supply of resources has fueled such culture to emerge. Ever faster chips, more RAM then ever before, bigger faster GPU's. 
+  As we have more resources we can use, the concern of efficiency and size has dropped, and in it's stead, we care about programmers efficiency.
+  From fast hand crafted assembly routines to bloated slow software giving birth to the <a href="http://exo-blog.blogspot.com/2007/09/what-intel-giveth-microsoft-taketh-away.html">"What Intel giveth, Microsoft taketh away"</a>
+</p>
+<p>
+  It is not only the abundance of resources which causes the decline. Computer science is relatively 
   <a href="https://people.inf.ethz.ch/wirth/Miscellaneous/ComputersAndComputing.pdf">new</a>, and ideas are still being tested. 
   <a href="https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf">Good ideas</a> will turn into 
   <a href="https://medium.com/the-long-now-foundation/intellectual-dark-matter-2e5890aa8d8f">lost knowledge</a> 
   if no one bothers to learn and sperad them. As software enginneers we need to make the right trade-off's which requires deep 
   knowldege of tools we use, and ideas we believe. <a href="https://floooh.github.io/2018/06/02/one-year-of-c.html">Which can also come from insights into old technology.</a>
 </p>
+<p><u><i>Complexity is the devil we should eradicate, simplicity is the angel to bring forth salvation</i></u></p>
 <p>
-  To counter the decline, learn to appreciate the resources you have at your desposal. Understand the processing speed 
-  of your computer to know how fast or slow things should be, with this baseline as reference you will be on the right path. 
-  Languages are under-appreciated as they give you a lot. Learn assembly to appreciate C, learn C to appreciate python. 
+  Linux is a many million lines of code monolith, 
+  <a href="https://www.youtube.com/watch?v=aVNCgmAsI8c">adobe after effects has grown so complex, speed and stability seems to be a dream</a>.
+  Creating a simple website now requires frameworks with loads of libraries to be "modern", and languages which take a 
+  <a href="https://fasterthanli.me/articles/why-is-my-rust-build-so-slow">long time to compile</a> a simple program are real. 
+  People admire complexity instead of fearing it. 
+</p>
+<p>
+  The main pitfall beginners fall into is they admire complex code. You want simple code you can read and change, 
+  not complex code that some people take pride in "did you see my complex project that does a basic thing?". 
+  It takes skill to produce simple code. Sometimes simple to read, sometimes simple for the machine to execute, and 
+  sometimes simple to write. 
+</p>
+<p>
+  You need to find the best balance between every axis of simplicity you can find as you 
+  work on projects. But rememeber to also let go when needed. Don't obsess over a irrelevent axis forgetting about the rest, 
+  look for the best trade-offs you can find. The better trade-offs you make the better results you will see.
+</p>
+
+<h2 id="4">Code reuse and trade-offs</h2>
+<p>
+  Seemingly good practices like code-reuse are over-used irresponsibly, with people including huge libraries for the use of a single function. 
+</p>
+<p>
+  Sometimes it is in search of a high quality library that implementes something you are not an expert on. It can be the community around the library along with 
+  the increase transferability of skills across teams. Maybe you just don't want to maintain that part. These are the reasons one might turn to reusing code 
+  instead of coding it from scratch.
+</p>
+<p>
+  On the other hand, using other people's code means conforming to the constraints that the people who created the library had. Bigger libraries impose more contraints, and 
+  more libraires impose more contraints. If the constraints don't meet yours, you might end-up spending more time on adjusting your/other's code to make it work than 
+  if you had wrote it from scratch. And if you have invested too much into a bad library... too bad. 
+</p> 
+<p>
+  "it's fine if a library isn't completely perfect, none is, it's a time 
+  saver. you sacrifice a little bit of personal peace for the sake of getting some shit done or not needing to have the mental overhead of dealing with another person's crap.
+  especially not a person or people who you can't directly contact...the maintainers are simply not my friends, they're not my colleagues, if i need LLVM fixed i cry, 
+  if i need any huge library fixed i need to go learn their BS along with the original problem space. if i need a feature added, i also cry." - NeGate 2022
+</p>
+<p>
+  Worst are the changing constraints. Usually this happens with package managers when updating dependencies. In general, package managers allow for quick download-and-use 
+  type of behaviour with regard to dependencies, and easily updating dependencies. We can notice problems when a library author has decided to change the behaviour or api 
+  of his library. The update will cause many programs dependent on that old version's behaviour or api to break. For this reason, explicit upgrades to stable versions of 
+  software is prefered, rather than the more convenient automatic option.
+</p>
+<p>
+  We can see this in the handmade-community where single-header libraries are popular. e.g. `stb_image` and `stb_freetype`. They require explicit upgrades, the ability 
+  to modify source code, and they usually do not have dependencies themselves. Along with the fact that single-header libraries are usually smaller, they dodge to some 
+  degree the more destructive nature of large managed dependencies while still bringing great value. 
+</p>
+<p>
+  Sometimes you just need more than what people fit into a single-header library or you don't want to change the source code and instead just extend what is already there. 
+  This will touch on library design abit. But it is important to know because if a library is well designed, then it will <a href="https://www.youtube.com/watch?v=5l2wMgm7ZOk/">meet a much wider range of people's needs</a> and 
+  won't become a large time-sink down the line if maintance is needed in the code-base.
+</p>
+<p>
+  Important take a way here is <i>"When you buy into a big library, you sell some personal responsibility away which can be good... until things go wrong"</i>
+</p>
+
+<h2 id="5">Appreciate</h2>
+<p>
+  To counter the decline, learn to appreciate the resources you have at your desposal. Learn how does your computer work to 
+  appreciate how fast it is. Learn assembly to appreciate C, learn C to appreciate python. 
   Things that you might take for granted in some languages, you need to think hard about in others. 
-  Learn to appreciate the great things we have today and try to achieve good understanding of these tools.
+  Appreciate how much work the browser does for you behind the scenes to render a html page, and the safety it provides for your web pages. 
 </p>
 <p>
-  Language wars are not uncommon, they mostly stem from people who don't know how to make trade-off's. 
+  Learn to appreciate the great things we have today and try to achieve good understanding in the small things we might take for granted. 
+  Appreciating them will allow you to make the best choices when given trade-offs you need to make.
 </p>
+<h2 id="6">But so what?</h2>
 <p>An important question to ask now is "but why should we care?" computers are getting faster every year, and we have so many programmers 
   to put the burden of understanding the complex systems. Why is all of this a problem?</p>
 <p>
@@ -79,73 +149,36 @@
   The traditional way chips have gotten faster is by the exploitation of 
   <a href="https://youtu.be/Nb2tebYAaOA?t=220">parallelism within code programmers write</a> better proccess nodes and higher clock speeds. 
   Whether it is by predicting branches, executing multiple instructions at different locations on the hardware, running other code while the cpu 
-  waits for memory using hyperthreading or clock speed and node proccess improvements, today the performance gains from these techniques reach a 
-  plateau. 
-</p>
-
-
-
-
-<p>
-  Seemingly good practices like code-reuse are over-used irresponsibly, with people including huge libraries for the use of 
-  a single function. 
-</p>
-
-<p>
-  Linux is a many million lines of code monolith, 
-  <a href="https://www.youtube.com/watch?v=aVNCgmAsI8c">adobe after effects has grown so complex, speed and stability seems to be a dream</a>.
-  Creating a simple website now requires frameworks with loads of libraries to be "modern", and languages which take a 
-  <a href="https://fasterthanli.me/articles/why-is-my-rust-build-so-slow">long time to compile</a> a simple program are real. 
-  People admire complexity instead of fearing it. 
-</p>
-
-
-<p>
-  The culture around the creation of software seems to revolve around using more tools to solve problems because 
-  they are not capable of solving it themselves.
-  "not reinvent the wheel". Understanding of those tools is an after thought.
-</p>
-
-<p>
-  We need large architectual changes to drive new innovation in hardware and software. 
-  The lessons learned by both, along with cooperation is exactly what we need to create a more exciting future for software. 
+  waits for memory using hyperthreading or clock speed and node proccess improvements, today the performance gains from these techniques reached a 
+  plateau where any improvement requires more hard work than ever before and give diminishing returns. 
 </p>
 <p>
-  People today are accustomed to slow buggy software. They expect something to not work, to constantly save a document because who knows when the 
-  program will crash, wait until the os starts up, or until the application will open. 
-  is a prime example for where we stand today, and anyone continuing this trajectory is in my opinion doomed to fail. 
-  It is just a matter of time before we reach a limit where these things are unacceptable. When today's programming practices will change for the 
-  better, when people's understanding will deepen, and prejudice around the old ways will go away.  To allow the old giants to collapse under their 
-  own weight.
+  While hardware improvements can be made with time, software improvemnts can be made easily with each new software created. 
+  Because I advocate for a culture where quality should be regarded as a high priority I am bringing this topic up. 
+  Part of the value we can bring to users is the speed and bug free user experience, so I spend a considerable amount of time 
+  talking about it right now. As my advice is partially connected to the future I want to see.
 </p>
 
-<h2>Finally some advice</h2>
+<h2 id="7">Value</h2>
 <p>
-  For one, don't participate in this. 
-  Don't use libraries if you can easily write the solution, refactor code if needed, understand the tools you are using, and try to understand 
-  what is the problem you are trying to solve.  Aside from not using libraries because of "dependency hell", libraries have constraints that 
-  your problem might not have, which will introduce hardships down the line as you are integrating the two. 
+  In the end most software can be 10x to 100x faster and significantly less bugy than today if people will care to do anything about it.
+  The value gain in making the user experience better than the rest of the market seem logical and proven already. I would advise beginners to 
+  care about the speed and stability of the software they write just as much as the features they create. 
 </p>
 <p>
-  Refactoring is key. Like any problem who's solution you don't know in advance, some exploration is needed to better understand the problem. 
-  With that in mind, at some point you will notice a flaw in the design. That flaw if left alone will overtime, create technical debt leading 
-  to complexity.
+  We create software because we want to create value for others. Don't forget that. 
+  When you want to create a project for someone to use, you must think of the value you provide to them, 
+  and how you should advance should be aligned to the path in which you can bring more value.
 </p>
 <p>
-  We must remind ourselves that we solve problems within the domain of computing, as such, knowledge of the hardware is mandatory, algorithems, 
-  data structures, these are bits and pieces of what we have learned to be <i>extremely</i> useful.  Mathmatical tools are of great help when 
-  a problem is hard enough that mathmatical tools can help solve.  
+  No user wants to have thier program crash, no user wants to click on something only to wait for something to happen in the background.
+  When you are more advanced look for opportunities to bring more value.
 </p>
 
-<h2>TL;DR</h2>
-<p><i>Complexity is the devil we should eradicate, simplicity is the angel to bring forth salvation.</i></p>
-<p><i>Making the right trade-off's are an enginners job, you want to be a software enginneer</i></p>
+<h2 id="8">Contributing</h2>
 <p>
-  As programmers we solve problems within the domain of computing, when doing so we deal with the complexity of systems we create and maintain.
-  As such, the best advice I could give is to strive for <i>simplicity</i>, <i>elegance</i>, as we create solutions to problems in our domain. 
-  Simple to read, simple to maintain, simple for the hardware to execute. That is the goal. We do so by making the right trade-off's
-  using deep knowldege we aquire through learning. And to aquire that knowledge we surround ourselves with bright people 
-  who hold it.
+  Today many people contribute to open-source code. This is a amazing time where you can just lookup a project and help it advance creating immense impact.
+  Contributing to existing code will make a greater impact than if you were to create something for your own use and hone your skills on real projects people 
+  care about. 
 </p>
-
 </div>
