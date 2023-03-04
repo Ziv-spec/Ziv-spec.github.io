@@ -14,17 +14,17 @@
 <h1>Advice for beginners</h1>
 <h2>Table of contents</h2>
 <p>
-<li><a href="#1">Which language should I choose?</a></li>
-<li><a href="#2">So what should I do?</a></li>
-<li><a href="#3">Warning of decline in culture</a></li>
-<li><a href="#4">Code reuse and trade-offs</a></li>
-<li><a href="#5">Appreciate</a></li>
-<li><a href="#6">But so what?</a></li>
-<li><a href="#7">Value</a></li>
-<li><a href="#8">Contributing</a></li>
+<li><a href="#language">Which language should I choose?</a></li>
+<li><a href="#whattodo">So what should I do?</a></li>
+<li><a href="#culture">Warning of decline in culture</a></li>
+<li><a href="#appreciate">Appreciate</a></li>
+<li><a href="#sowhat">But so what?</a></li>
+<li><a href="#codereuse">Code reuse and trade-offs</a></li>
+<li><a href="#value">Value</a></li>
+<li><a href="#contribute">Contributing</a></li>
 </p>
 
-<h2 id="1">Which language should I choose?</h2>
+<h2 id="language">Which language should I choose?</h2>
 <p>
   A common pitfall for many beginners is they want to pick the "best" language to begin with, to create a "perfect" program.
   As humans we want to be perfect although we are incapable being so, it is natural but it hinders progress for new programmers.
@@ -34,14 +34,14 @@
   someone who constantly tries to be "perfect".
 </p>
 
-<h2 id="2">So what should I do?</h2>
+<h2 id="whattodo">So what should I do?</h2>
 <p>
   As a beginner I liked watching tutorials for doing anything, stuck in a loop between a video I was watching and my editor.
   My advice is to pick a project you want to work on and try to create it. You will most likely learn more when working on 
   cool projects than when following tutorials and also you will have cool things to show afterwards.
 </p>
 
-<h2 id="3">Warning of decline in culture</h2>
+<h2 id="culture">Warning of decline in culture</h2>
 <p>
   Usually people subscrible to different ideas and cultures when they are surrounded by them. When the culture advocates
   for the production of high-quality good products, people will produce high-quality products and yet the software culture 
@@ -87,47 +87,7 @@
   look for the best trade-offs you can find. The better trade-offs you make the better results you will see.
 </p>
 
-<h2 id="4">Code reuse and trade-offs</h2>
-<p>
-  Seemingly good practices like code-reuse are over-used irresponsibly, with people including huge libraries for the use of a single function. 
-</p>
-<p>
-  Sometimes it is in search of a high quality library that implementes something you are not an expert on. It can be the community around the library along with 
-  the increase transferability of skills across teams. Maybe you just don't want to maintain that part. These are the reasons one might turn to reusing code 
-  instead of coding it from scratch.
-</p>
-<p>
-  On the other hand, using other people's code means conforming to the constraints that the people who created the library had. Bigger libraries impose more contraints, and 
-  more libraires impose more contraints. If the constraints don't meet yours, you might end-up spending more time on adjusting your/other's code to make it work than 
-  if you had wrote it from scratch. And if you have invested too much into a bad library... too bad. 
-</p> 
-<p>
-  "it's fine if a library isn't completely perfect, none is, it's a time 
-  saver. you sacrifice a little bit of personal peace for the sake of getting some shit done or not needing to have the mental overhead of dealing with another person's crap.
-  especially not a person or people who you can't directly contact...the maintainers are simply not my friends, they're not my colleagues, if i need LLVM fixed i cry, 
-  if i need any huge library fixed i need to go learn their BS along with the original problem space. if i need a feature added, i also cry." - NeGate 2022
-</p>
-<p>
-  Worst are the changing constraints. Usually this happens with package managers when updating dependencies. In general, package managers allow for quick download-and-use 
-  type of behaviour with regard to dependencies, and easily updating dependencies. We can notice problems when a library author has decided to change the behaviour or api 
-  of his library. The update will cause many programs dependent on that old version's behaviour or api to break. For this reason, explicit upgrades to stable versions of 
-  software is prefered, rather than the more convenient automatic option.
-</p>
-<p>
-  We can see this in the handmade-community where single-header libraries are popular. e.g. `stb_image` and `stb_freetype`. They require explicit upgrades, the ability 
-  to modify source code, and they usually do not have dependencies themselves. Along with the fact that single-header libraries are usually smaller, they dodge to some 
-  degree the more destructive nature of large managed dependencies while still bringing great value. 
-</p>
-<p>
-  Sometimes you just need more than what people fit into a single-header library or you don't want to change the source code and instead just extend what is already there. 
-  This will touch on library design abit. But it is important to know because if a library is well designed, then it will <a href="https://www.youtube.com/watch?v=5l2wMgm7ZOk/">meet a much wider range of people's needs</a> and 
-  won't become a large time-sink down the line if maintance is needed in the code-base.
-</p>
-<p>
-  Important take a way here is <i>"When you buy into a big library, you sell some personal responsibility away which can be good... until things go wrong"</i>
-</p>
-
-<h2 id="5">Appreciate</h2>
+<h2 id="appreciate">Appreciate</h2>
 <p>
   To counter the decline, learn to appreciate the resources you have at your desposal. Learn how does your computer work to 
   appreciate how fast it is. Learn assembly to appreciate C, learn C to appreciate python. 
@@ -138,7 +98,8 @@
   Learn to appreciate the great things we have today and try to achieve good understanding in the small things we might take for granted. 
   Appreciating them will allow you to make the best choices when given trade-offs you need to make.
 </p>
-<h2 id="6">But so what?</h2>
+
+<h2 id="sowhat">But so what?</h2>
 <p>An important question to ask now is "but why should we care?" computers are getting faster every year, and we have so many programmers 
   to put the burden of understanding the complex systems. Why is all of this a problem?</p>
 <p>
@@ -159,7 +120,43 @@
   talking about it right now. As my advice is partially connected to the future I want to see.
 </p>
 
-<h2 id="7">Value</h2>
+<h2 id="codereuse">Code reuse and trade-offs</h2>
+<p>Seemingly good practices like code-reuse are over-used irresponsibly, with people including huge libraries for the use of a single function.</p>
+<p>
+  Sometimes it is in search of a high quality library that implementes something you are not an expert on. It can be the community around the library along with 
+  the increase transferability of skills across teams. Maybe you just don't want to maintain that part. These are the reasons one might turn to reusing code 
+  instead of coding it from scratch.
+</p>
+<p>
+  On the other hand, using other people's code means conforming to the constraints that the people who created the library had. Bigger libraries impose more contraints, and 
+  more libraires impose more contraints. If the constraints don't meet yours, you might end-up spending more time on adjusting your/other's code to make it work than 
+  if you had wrote it from scratch. And if you have invested too much into a bad library... too bad. 
+</p> 
+<p>
+  "it's fine if a library isn't completely perfect, none is, it's a time 
+  saver. you sacrifice a little bit of personal peace for the sake of getting some shit done or not needing to have the mental overhead of dealing with another person's crap.
+  especially not a person or people who you can't directly contact...the maintainers are simply not my friends, they're not my colleagues, if i need LLVM fixed i cry, 
+  if i need any huge library fixed i need to go learn their BS along with the original problem space. if i need a feature added, i also cry." - <a href="https://handmade.network/fishbowl/libraries/#chatlog__message-container-1003003441322397797">NeGate 2022</a>
+</p>
+<p>
+  Worst are the changing constraints. Usually this happens with package managers when updating dependencies. In general, package managers allow for quick download-and-use 
+  type of behaviour with regard to dependencies, and easily updating dependencies. We can notice problems when a library author has decided to change the behaviour or api 
+  of his library. The update will cause many programs dependent on that old version's behaviour or api to break. For this reason, explicit upgrades to stable versions of 
+  software is prefered, rather than the more convenient automatic option.
+</p>
+<p>
+  We can see this in the <a href="https://handmade.network/">handmade-community</a> where single-header libraries are popular. e.g. <a href="https://github.com/nothings/stb">`stb_image` and `stb_freetype`.</a> They require explicit upgrades, the ability 
+  to modify source code, and they usually do not have dependencies themselves. Along with the fact that single-header libraries are usually smaller, they dodge to some 
+  degree the more destructive nature of large managed dependencies while still bringing great value. 
+</p>
+<p>
+  Sometimes you just need more than what people fit into a single-header library or you don't want to change the source code and instead just extend what is already there. 
+  This will touch on library design abit. But it is important to know because if a library is well designed, then it will <a href="https://www.youtube.com/watch?v=5l2wMgm7ZOk/">meet a much wider range of people's needs</a> and 
+  won't become a large time-sink down the line if maintance is needed in the code-base.
+</p>
+<p>Important take a way here is <i>"When you buy into a big library, you sell some personal responsibility away which can be good... until things go wrong"</i></p>
+
+<h2 id="value">Value</h2>
 <p>
   In the end most software can be 10x to 100x faster and significantly less bugy than today if people will care to do anything about it.
   The value gain in making the user experience better than the rest of the market seem logical and proven already. I would advise beginners to 
@@ -171,11 +168,11 @@
   and how you should advance should be aligned to the path in which you can bring more value.
 </p>
 <p>
-  No user wants to have thier program crash, no user wants to click on something only to wait for something to happen in the background.
+  No user wants to have their program crash, no user wants to click on something only to wait for something to happen in the background.
   When you are more advanced look for opportunities to bring more value.
 </p>
 
-<h2 id="8">Contributing</h2>
+<h2 id="contribute">Contributing</h2>
 <p>
   Today many people contribute to open-source code. This is a amazing time where you can just lookup a project and help it advance creating immense impact.
   Contributing to existing code will make a greater impact than if you were to create something for your own use and hone your skills on real projects people 
