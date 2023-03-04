@@ -18,16 +18,6 @@
 <h1>Advice for beginners</h1>
 <h2>Table of contents</h2>
 <div id="table_of_content"></div>
-<!-- <p>
-<li><a href="#language">Which language should I choose?</a></li>
-<li><a href="#whattodo">So what should I do?</a></li>
-<li><a href="#culture">Warning of decline in culture</a></li>
-<li><a href="#appreciate">Appreciate</a></li>
-<li><a href="#sowhat">But so what?</a></li>
-<li><a href="#codereuse">Code reuse and trade-offs</a></li>
-<li><a href="#value">Value</a></li>
-<li><a href="#contribute">Contributing</a></li>
-</p> -->
 
 <h2 id="language">Which language should I choose?</h2>
 <p>
@@ -189,20 +179,13 @@
 <script>
   var h2_headings = document.querySelectorAll("h2");
   var table = document.getElementById("table_of_content");
+  var tags = '';
   for (var i = 0; i < h2_headings.length; i++) {
     var id = h2_headings[i].id;
     if (id == '') continue;
-
-    var tag_li = document.createElement("li");
-    var text = document.createTextNode(h2_headings[i].textContent);
-    tag_li.appendChild(text);
-
-    var tag_a = document.createElement("a");
-    tag_a.href = "#"+id;
-    tag_a.appendChild(tag_li);
-
-    table.appendChild(tag_a);
+    tags += '<li><a href="'+ "#"+id +'">'+ h2_headings[i].textContent +'</a></li>\n';
   }
+  table.innerHTML = tags;
 </script>
 
 </body>
