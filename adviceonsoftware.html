@@ -4,6 +4,10 @@
 <meta property="og:type" content="article" />
 
 <style>
+  html {
+    scroll-behavior: smooth;
+    touch-action: manipulation;
+  }
   body {
     letter-spacing: .33px;
     font-size: 1.05em;
@@ -19,17 +23,12 @@
   main {
     display: block;
   }
-  .hidden {
-    display: none;
-  }
 
   .flex {
       display: flex;
   }
   div.wrapper {
-    /* margin-right: auto;
-    margin-left: auto; */
-    line-height: 1.15;
+    line-height: 1.6;
     flex-grow: 1;
     padding: 1rem;
   }
@@ -56,9 +55,11 @@
     margin-top: 1.5em;
     margin-bottom: 1rem;
   }
-  a.active {
-   color: var(--color-link);
+  a { 
    text-decoration: none;
+  }
+  a.active {
+   color: black;
   }
   ul {
     padding: 0px;
@@ -74,7 +75,6 @@
     font-size: 18px;
     letter-spacing: -1px;
     font-style: italic;
-
     margin-inline-start: 0px;
   }
 
@@ -90,7 +90,6 @@
     z-index: 1
   }
 }
-
 </style>
 </head>
 
@@ -100,20 +99,46 @@
  
 
 <main class="container flex">
-<div class="side">
-<div class="menu"> <nav id="navigation-bar">
+<div class="side"> <div class="menu"> <nav id="navigation-bar">
 <h2>house of useless thoughts</h2>
-</nav> 
-</div> </div>
+</nav> </div> </div>
 
 <div class="wrapper">
 <h1>Advice for beginners</h1>
+<p>Since am I writing about advice for beginners, the biggest advice I have is to just practice more. Programming is a skill, practicing on real projects will improve your skill positivly at a although slow, but hopefuly consistant manner. To make this practice worth while, this post will try to act like a good friend giving advice about a complex subject.</p>
 
-<h2 id="language">Which language should I choose?</h2>
-<p>A common pitfall for many beginners is they want to pick the "best" language to begin with, to create a "perfect" program.  As humans we want to be perfect although we are incapable being so, it is natural but it hinders progress for new programmers. There is no "best" language to pick, just differerent languages for many usecases, no "perfect" code but, code that answers the constraints placed. So for my first advice, pick a recommended language that many people love and <b>begin coding</b>. Coding is a skill, the more practice one has, the better intuition he will have for what to do next, making you better than someone who constantly tries to be "perfect".</p>
-
-<h2 id="what-should-i-do">So what should I do?</h2>
+<hr>
+<h2 id="the-escape">The escape</h2>
 <p>As a beginner I liked watching tutorials for doing anything, stuck in a loop between a video I was watching and my editor. My advice is to pick a project you want to work on and try to create it. You will most likely learn more when working on cool projects than when following tutorials and also you will have cool things to show afterwards.</p>
+
+<h2 id="contribute">Contributing</h2>
+<p>Today many people contribute to open-source code. This is a amazing time where you can just lookup a project and help it advance creating immense impact. Contributing to existing code will make a greater impact than if you were to create something for your own use and hone your skills on real projects people care about.</p>
+
+<h2 id="which-language">Which language?</h2>
+<p>You are on your journy to program a project you have chosen, and you want to pick a good language for your first project, but you can't seem to decide which one is the "best" language, should I choose one for beginners? or one that I can do more things with later on? how do I choose the right one?</p>
+<p>It is important to notice that programming languages are tools created to assist you with making the software you desire. For this reason as you program more and create different kinds of software, your choices of languages will change and adapt to whichever proejct you will work on, this first choice is only a stepping stone in your road, so pick something to motivate you. As a first language pick something simple that hides many of the details of how the hardware works and allows you to enjoy creating stuff. I would recommend <code>Python</code> if you want a general purpose language that can help you build many kinds of applications quickly or, if you want to build websites quickly <code>Javascript</code> with <code>HTML</code> is your best choice.</p>
+<p>Now, though I have given my choices for what I would pick, I don't want to leave you with them without explaining why I chose them first. The background I will give you right now is not required, but hopefuly interesting enough to still be valuable to people.</p>
+<p>The most basic language is the one your computer actually knows how to decode and execute on the hardware you have, we call it machine code. Machine code is the lowest-level interface intended for a programmer, it encodes specific cpu tasks e.g. load, store, jump or a computation like addition or multiplication on <a href="https://en.wikipedia.org/wiki/Processor_register">registers</a> or <a href="https://en.wikipedia.org/wiki/Processor_register">memory.</a> This language is encoded in bits, yes, ones and zeros, humans pretty quickly figured that a better solution is needed, the solution? Assembly.</p>
+<p>Assembly is a direct translation of machine code to human recognizable words. It doesn't hide much of the inner workings or correctness, nor does it provide a nice way of structuring code instead, code is a linear list of instructions written just like they will get executed, one after the other making large programs very hard to read. Assembly is not a nice language to work with since it only tries to be a very simple translation layer for a language made for machines. Later on langauges which look more like modern languages started to pop up.</p>
+<p>For many years programmers started comming up with new ideas to experiment with, new languages with many different features, new restrictions and ways of structuring code all to make the tools we use better. One language has taken form with different ideas taken from languages from the time, this language is still in use today, it is <code>C</code>. <code>C</code> Is a simple language, where you can learn all of it in a couple months or weeks, it has stucture, and is "modern" enough to still be in use many years after it's creation. It provides a nice abstraction over Assembly, not hiding too much while exposing things in a nice manner while being stable over the years, much unlike other languages that have come after it. In essense C is a language that people will use if they need to know what the hardware does but at a higher level than the instructions themselves. Allowing the programmer to have some peace of mind, and benefits of a higher-level langauge while still being in control. But, for some even this is not enough.</p>
+<p><code>Python</code> is a high-level language that many programmers use. It is not fast nor simple(the spec is long), but still manages to be beginner friendly, it allows for much freedom by leveraging libraries written in other languages and completely hides anything that might go on in the computer for the benefit of the programmer. Many people prefer it for many reasons but just like I said at the beginning these langauges are tools, you need to look and see which one fits the job best and then use whichever you might want.</p>
+<p>The choice of languages and order is progressive. Each language hides more details, and frees the programmers mind from them. This of course comes at some cost, but it is a cost we all are willing to pay for the freedom it gives at the end. If the cost is high enough we should look for alternatives but it is very important to question the cost first. Many modern programmers forget about the cost as they are not familiar with it, I hope you can make that choice correctly. This is a brief about in my opinion important languages to be familiar with. There are <a href="https://people.inf.ethz.ch/wirth/Miscellaneous/IEEE-Annals.pdf">many more if you are interested</a>. </p>
+
+<h2 id="code-reuse">Code reuse and trade-offs</h2>
+<p>Seemingly good practices like code-reuse are over-used irresponsibly, with people including huge libraries for the use of a single function.</p>
+<p>Sometimes it is in search of a high quality library that implementes something you are not an expert on. It can be the community around the library along with the increase transferability of skills across teams. Maybe you just don't want to maintain that part. These are the reasons one might turn to reusing code instead of coding it from scratch.</p>
+<p>On the other hand, using other people's code means conforming to the constraints that the people who created the library had. Bigger libraries impose more contraints, and more libraires impose more contraints. If the constraints don't meet yours, you might end-up spending more time on adjusting your/other's code to make it work than if you had wrote it from scratch. And if you have invested too much into a bad library... too bad.</p> 
+<p>Just like NeGate said on <a href="https://handmade.network/fishbowl/libraries/#chatlog__message-container-1003003441322397797">handmade-network fishbowl:</a></p>
+<blockquote>it's fine if a library isn't completely perfect, none is, it's a time saver. you sacrifice a little bit of personal peace for the sake of getting some shit done or not needing to have the mental overhead of dealing with another person's crap.  especially not a person or people who you can't directly contact...the maintainers are simply not my friends, they're not my colleagues, if i need LLVM fixed i cry, if i need any huge library fixed i need to go learn their BS along with the original problem space. if i need a feature added, i also cry.</blockquote>
+<p>Worst are the changing constraints. Usually this happens with package managers when updating dependencies. In general, package managers allow for quick download-and-use type of behaviour with regard to dependencies, and easily updating dependencies. We can notice problems when a library author has decided to change the behaviour or api of his library. The update will cause many programs dependent on that old version's behaviour or api to break. For this reason, explicit upgrades to stable versions of software is prefered, rather than the more convenient automatic option.</p>
+<p>We can see this in the <a href="https://handmade.network/">handmade-community</a> where single-header libraries are popular. e.g. <a href="https://github.com/nothings/stb">`stb_image` and `stb_freetype`.</a> They require explicit upgrades, the ability to modify source code, and they usually do not have dependencies themselves. Along with the fact that single-header libraries are usually smaller, they dodge to some degree the more destructive nature of large managed dependencies while still bringing great value.</p>
+<p>Sometimes you just need more than what people fit into a single-header library or you don't want to change the source code and instead just extend what is already there.  This will touch on library design abit. But it is important to know because if a library is well designed, then it will <a href="https://www.youtube.com/watch?v=5l2wMgm7ZOk/">meet a much wider range of people's needs</a> and won't become a large time-sink down the line if maintance is needed in the code-base.</p> 
+<p>Important take a way here is <i>When you buy into a big library, you sell some personal responsibility away which can be good... until things go wrong</i></p>
+
+<h2 id="value">Value</h2>
+<p>In the end most software can be 10x to 100x faster and significantly less bugy than today if people will care to do anything about it.  The value gain in making the user experience better than the rest of the market seem logical and proven already. I would advise beginners to care about the speed and stability of the software they write just as much as the features they create.</p> 
+<p>We create software because we want to create value for others. Don't forget that.  When you want to create a project for someone to use, you must think of the value you provide to them, and how you should advance should be aligned to the path in which you can bring more value.  </p>
+<p>No user wants to have their program crash, no user wants to click on something only to wait for something to happen in the background.  When you are more advanced look for opportunities to bring more value.</p>
 
 <h2 id="decline-in-culture">Decline in culture</h2>
 <p>Usually people subscrible to different ideas and cultures when they are surrounded by them. When the culture advocates for the production of high-quality good products, people will produce high-quality products and yet the software culture seems to advocate for fast development time at the expense of the user experience.</p>
@@ -135,29 +160,12 @@
 <p>Well... computers are not getting that much faster!! Today the trend for general purpose chips is the increase the number of cores along with some slight improvments in IPC - Instructions Per Clock.  The slowdown might be cuased because of lack of <a href="https://www.theregister.com/2022/07/18/electrical_engineers_extinction/">engineers</a> along with technical difficulties we experience. <br /> The traditional way chips have gotten faster is by the exploitation of <a href="https://youtu.be/Nb2tebYAaOA?t=220">parallelism within code programmers write</a> better proccess nodes and higher clock speeds. Whether it is by predicting branches, executing multiple instructions at different locations on the hardware, running other code while the cpu waits for memory using hyperthreading or clock speed and node proccess improvements, today the performance gains from these techniques reached a plateau where any improvement requires more hard work than ever before and give diminishing returns.</p>
 <p>While hardware improvements can be made with time, software improvemnts can be made easily with each new software created. Because I advocate for a culture where quality should be regarded as a high priority I am bringing this topic up. Part of the value we can bring to users is the speed and bug free user experience, so I spend a considerable amount of time talking about it right now. As my advice is partially connected to the future I want to see.</p>
 
-<h2 id="code-reuse">Code reuse and trade-offs</h2>
-<p>Seemingly good practices like code-reuse are over-used irresponsibly, with people including huge libraries for the use of a single function.</p>
-<p>Sometimes it is in search of a high quality library that implementes something you are not an expert on. It can be the community around the library along with the increase transferability of skills across teams. Maybe you just don't want to maintain that part. These are the reasons one might turn to reusing code instead of coding it from scratch.</p>
-<p>On the other hand, using other people's code means conforming to the constraints that the people who created the library had. Bigger libraries impose more contraints, and more libraires impose more contraints. If the constraints don't meet yours, you might end-up spending more time on adjusting your/other's code to make it work than if you had wrote it from scratch. And if you have invested too much into a bad library... too bad.</p> 
-<p>Just like NeGate said on <a href="https://handmade.network/fishbowl/libraries/#chatlog__message-container-1003003441322397797">handmade-network fishbowl:</a></p>
-<blockquote>it's fine if a library isn't completely perfect, none is, it's a time saver. you sacrifice a little bit of personal peace for the sake of getting some shit done or not needing to have the mental overhead of dealing with another person's crap.  especially not a person or people who you can't directly contact...the maintainers are simply not my friends, they're not my colleagues, if i need LLVM fixed i cry, if i need any huge library fixed i need to go learn their BS along with the original problem space. if i need a feature added, i also cry.</blockquote>
-
-<p>Worst are the changing constraints. Usually this happens with package managers when updating dependencies. In general, package managers allow for quick download-and-use type of behaviour with regard to dependencies, and easily updating dependencies. We can notice problems when a library author has decided to change the behaviour or api of his library. The update will cause many programs dependent on that old version's behaviour or api to break. For this reason, explicit upgrades to stable versions of software is prefered, rather than the more convenient automatic option.</p>
-<p>We can see this in the <a href="https://handmade.network/">handmade-community</a> where single-header libraries are popular. e.g. <a href="https://github.com/nothings/stb">`stb_image` and `stb_freetype`.</a> They require explicit upgrades, the ability to modify source code, and they usually do not have dependencies themselves. Along with the fact that single-header libraries are usually smaller, they dodge to some degree the more destructive nature of large managed dependencies while still bringing great value.</p>
-<p>Sometimes you just need more than what people fit into a single-header library or you don't want to change the source code and instead just extend what is already there.  This will touch on library design abit. But it is important to know because if a library is well designed, then it will <a href="https://www.youtube.com/watch?v=5l2wMgm7ZOk/">meet a much wider range of people's needs</a> and won't become a large time-sink down the line if maintance is needed in the code-base.</p> 
-<p>Important take a way here is <i>"When you buy into a big library, you sell some personal responsibility away which can be good... until things go wrong"</i></p>
-
-<h2 id="value">Value</h2>
-<p>In the end most software can be 10x to 100x faster and significantly less bugy than today if people will care to do anything about it.  The value gain in making the user experience better than the rest of the market seem logical and proven already. I would advise beginners to care about the speed and stability of the software they write just as much as the features they create.</p> 
-<p>We create software because we want to create value for others. Don't forget that.  When you want to create a project for someone to use, you must think of the value you provide to them, and how you should advance should be aligned to the path in which you can bring more value.  </p>
-<p>No user wants to have their program crash, no user wants to click on something only to wait for something to happen in the background.  When you are more advanced look for opportunities to bring more value.</p>
-
-<h2 id="contribute">Contributing</h2>
-<p>Today many people contribute to open-source code. This is a amazing time where you can just lookup a project and help it advance creating immense impact. Contributing to existing code will make a greater impact than if you were to create something for your own use and hone your skills on real projects people care about.</p>
-
 </div>
+
+<div class="side"> <div class="menu">  </div> </div>
+
 <script>
-  var h2_headings = document.querySelectorAll("h2");
+  var h2_headings = document.querySelectorAll('h2');
   var table = document.getElementById("navigation-bar");
   if (h2_headings.length > 0) {
     var inner = "";
