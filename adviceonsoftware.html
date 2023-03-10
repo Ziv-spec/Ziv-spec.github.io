@@ -1,36 +1,44 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article" />
+
 <style>
   body {
     letter-spacing: .33px;
     font-size: 1.05em;
     font-weight: 400;
     font-family: serif;
-    box-sizing: border-box;
-    display: flex;
+    box-sizing: inherit;
     margin: 0px;
-    letter-spacing: .33px;
+  }
+  .container {
     max-width: 80rem;
+    margin: 0 auto;
+  }
+  main {
+    display: block;
+  }
+  .hidden {
+    display: none;
   }
 
   .flex {
       display: flex;
   }
   div.wrapper {
-    margin-right: auto;
-    margin-left: auto;
+    /* margin-right: auto;
+    margin-left: auto; */
     line-height: 1.15;
-    min-width: 20rem;
     flex-grow: 1;
     padding: 1rem;
-
+  }
+  div.side {
+    flex: 0 0 16rem; 
   }
   div.menu {
     width: 16rem;
-    padding: 1rem;
-    flex: 0 0 16rem;
-    font-size: .875rem;
+    position: fixed;
     top: 0;
     bottom: 0;
     overflow-x: hidden;
@@ -69,15 +77,34 @@
 
     margin-inline-start: 0px;
   }
+
+
+@media screen and (max-width:56rem) {
+  div.side {
+    flex: 0 0 0; 
+  }
+  div.menu {
+    visibility: hidden;
+    margin-inline-start: -16rem;
+    font-size: 16px;
+    z-index: 1
+  }
+}
+
 </style>
 </head>
 
 <body>
 <!-- <header role="banner" style="border-top: 5px solid #424242; border-bottom: 1px solid #e8e8e8; min-height: 50.95px; position: relative;"><div class="wrapper"><a href="/" style="color: #828282; font-size: 26; text-decoration: none; float:left; font-weight: 300; line-height: 54px; letter-spacing: -1px; margin-bottom: 0; ">house of useless thoughts</a></div></header>
  -->
+ 
+
+<main class="container flex">
+<div class="side">
 <div class="menu"> <nav id="navigation-bar">
 <h2>house of useless thoughts</h2>
-</nav> </div>
+</nav> 
+</div> </div>
 
 <div class="wrapper">
 <h1>Advice for beginners</h1>
@@ -129,7 +156,6 @@
 <p>Today many people contribute to open-source code. This is a amazing time where you can just lookup a project and help it advance creating immense impact. Contributing to existing code will make a greater impact than if you were to create something for your own use and hone your skills on real projects people care about.</p>
 
 </div>
-
 <script>
   var h2_headings = document.querySelectorAll("h2");
   var table = document.getElementById("navigation-bar");
@@ -162,5 +188,7 @@
   }
 
 </script>
+
+</main>
 </body>
 </html>
