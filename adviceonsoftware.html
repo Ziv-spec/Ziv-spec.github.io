@@ -2,38 +2,62 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+  body {
+    letter-spacing: .33px;
+    font-size: 1.05em;
+    font-weight: 400;
+    font-family: serif;
+    box-sizing: border-box;
+    display: flex;
+    margin: 0px;
+    letter-spacing: .33px;
+    max-width: 80rem;
+  }
+
+  .flex {
+      display: flex;
+  }
   div.wrapper {
-    max-width: calc(800px - (10px * 2));
     margin-right: auto;
     margin-left: auto;
-    padding-right: 10px;
-    padding-left: 10px;
-    font-family: Arial;
     line-height: 1.15;
-    display: block;
+    min-width: 20rem;
+    flex-grow: 1;
+    padding: 1rem;
+
+  }
+  div.menu {
+    width: 16rem;
+    padding: 1rem;
     flex: 0 0 16rem;
+    font-size: .875rem;
+    top: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  nav {
+    line-height: 0.8;
+    margin-left: 8px;
+    position: fixed;
+    top: 0;
+  }
+  h1 h2 h3 h4 h5 {
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 1.5em;
+    margin-bottom: 1rem;
   }
   a.active {
    color: var(--color-link);
    text-decoration: none;
   }
   ul {
-    margin: 0px;
     padding: 0px;
   }
   li {
     margin: 1em;
     list-style: none;
-    text-align: -webkit-match-parent;
-  }
-  nav {
-    position: fixed;
-    font-family: Arial;
-    line-height: 0.8;
-
-    display: block;
-    margin-left: 8px;
-    flex: 0 0 16rem;
   }
   blockquote {
     color: #828282;
@@ -45,20 +69,15 @@
 
     margin-inline-start: 0px;
   }
-  body {
-    box-sizing: inherit;
-    display: block;
-    margin: 0px;
-  }
 </style>
 </head>
 
 <body>
-<header role="banner" style="border-top: 5px solid #424242; border-bottom: 1px solid #e8e8e8; min-height: 55.95px; position: relative;"><div class="wrapper"><a href="/" style="color: #828282; font-size: 22; text-decoration: none;">Bruh</a></div></header>
-
-<nav id="table_of_content">
-<h2>Table of contents</h2>
-</nav>
+<!-- <header role="banner" style="border-top: 5px solid #424242; border-bottom: 1px solid #e8e8e8; min-height: 50.95px; position: relative;"><div class="wrapper"><a href="/" style="color: #828282; font-size: 26; text-decoration: none; float:left; font-weight: 300; line-height: 54px; letter-spacing: -1px; margin-bottom: 0; ">house of useless thoughts</a></div></header>
+ -->
+<div class="menu"> <nav id="navigation-bar">
+<h2>house of useless thoughts</h2>
+</nav> </div>
 
 <div class="wrapper">
 <h1>Advice for beginners</h1>
@@ -66,29 +85,30 @@
 <h2 id="language">Which language should I choose?</h2>
 <p>A common pitfall for many beginners is they want to pick the "best" language to begin with, to create a "perfect" program.  As humans we want to be perfect although we are incapable being so, it is natural but it hinders progress for new programmers. There is no "best" language to pick, just differerent languages for many usecases, no "perfect" code but, code that answers the constraints placed. So for my first advice, pick a recommended language that many people love and <b>begin coding</b>. Coding is a skill, the more practice one has, the better intuition he will have for what to do next, making you better than someone who constantly tries to be "perfect".</p>
 
-<h2 id="whattodo">So what should I do?</h2>
+<h2 id="what-should-i-do">So what should I do?</h2>
 <p>As a beginner I liked watching tutorials for doing anything, stuck in a loop between a video I was watching and my editor. My advice is to pick a project you want to work on and try to create it. You will most likely learn more when working on cool projects than when following tutorials and also you will have cool things to show afterwards.</p>
 
-<h2 id="culture">Warning of decline in culture</h2>
+<h2 id="decline-in-culture">Decline in culture</h2>
 <p>Usually people subscrible to different ideas and cultures when they are surrounded by them. When the culture advocates for the production of high-quality good products, people will produce high-quality products and yet the software culture seems to advocate for fast development time at the expense of the user experience.</p>
 <p>Have you ever had your computer crash? Maybe a program crashed without saving the progress? Or did you notice that your old computer slows down as you update your computer to newer versions? Did you ever question why a simple app requires so much space to download even though it seems to be pretty simple? Most people have experienced bugs, crashes, restarts, and big bloated software that hangs every once in a while. This is the result of the decline in culture, where bad user experience doesn't matter and it has become acceptable to face bugs every once in a while or wait for trivial things to load.</p>
 <p>The growing supply of resources has fueled such culture to emerge. Ever faster chips, more RAM then ever before, bigger faster GPU's. As we have more resources we can use, the concern of efficiency and size has dropped, and in it's stead, we care about programmers efficiency. From fast hand crafted assembly routines to bloated slow software giving birth to the <a href="http://exo-blog.blogspot.com/2007/09/what-intel-giveth-microsoft-taketh-away.html">"What Intel giveth, Microsoft taketh away"</a></p>
 <p>It is not only the abundance of resources which causes the decline. Computer science is relatively <a href="https://people.inf.ethz.ch/wirth/Miscellaneous/ComputersAndComputing.pdf">new</a>, and ideas are still being tested. <a href="https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf">Good ideas</a> will turn into <a href="https://medium.com/the-long-now-foundation/intellectual-dark-matter-2e5890aa8d8f">lost knowledge</a> if no one bothers to learn and sperad them. As software enginneers we need to make the right trade-off's which requires deep knowldege of tools we use, and ideas we believe. <a href="https://floooh.github.io/2018/06/02/one-year-of-c.html">Which can also come from insights into old technology.</a></p>
-<p><u><i>Complexity is the devil we should eradicate, simplicity is the angel to bring forth salvation</i></u></p>
-<p>Linux is a many million lines of code monolith, <a href="https://www.youtube.com/watch?v=aVNCgmAsI8c">adobe after effects has grown so complex, speed and stability seems to be a dream</a>. Creating a simple website now requires frameworks with loads of libraries to be "modern", and languages which take a <a href="https://fasterthanli.me/articles/why-is-my-rust-build-so-slow">long time to compile</a> a simple program are real. People admire complexity instead of fearing it.</p>
-<p>The main pitfall beginners fall into is they admire complex code. You want simple code you can read and change, not complex code that some people take pride in "did you see my complex project that does a basic thing?". It takes skill to produce simple code. Sometimes simple to read, sometimes simple for the machine to execute, and sometimes simple to write.</p>
+<p><b><i>Complexity is the devil we should eradicate, simplicity is the angel to bring forth salvation</i></b></p>
+<p>Linux is a many million lines of code monolith, <a href="https://www.youtube.com/watch?v=aVNCgmAsI8c">adobe after effects has grown so complex, speed and stability seems to be a dream</a>. Creating a simple website now requires frameworks with loads of libraries to be "modern", and languages which take a <a href="https://fasterthanli.me/articles/why-is-my-rust-build-so-slow">long time to compile</a> a simple program are real. </p>
+
+<p><i>People admire complexity instead of fearing it.</i> Many fall into this trap, smart and dumb a like. You want simple code you can read and change, not complex code that some people take pride in "did you see my complex project that does a basic thing?". It takes skill to produce simple code. Sometimes simple to read, sometimes simple for the machine to execute, and sometimes simple to write.</p>
 <p>You need to find the best balance between every axis of simplicity you can find as you work on projects. But rememeber to also let go when needed. Don't obsess over a irrelevent axis forgetting about the rest, look for the best trade-offs you can find. The better trade-offs you make the better results you will see.</p>
 
 <h2 id="appreciate">Appreciate</h2>
 <p>To counter the decline, learn to appreciate the resources you have at your desposal. Learn how does your computer work to appreciate how fast it is. Learn assembly to appreciate C, learn C to appreciate python. Things that you might take for granted in some languages, you need to think hard about in others. Appreciate how much work the browser does for you behind the scenes to render a html page, and the safety it provides for your web pages. </p>
 <p>Learn to appreciate the great things we have today and try to achieve good understanding in the small things we might take for granted. Appreciating them will allow you to make the best choices when given trade-offs you need to make.</p>
 
-<h2 id="sowhat">But so what?</h2>
+<h2 id="but-so-what">But so what?</h2>
 <p>An important question to ask now is "but why should we care?" computers are getting faster every year, and we have so many programmers to put the burden of understanding the complex systems. Why is all of this a problem?</p>
 <p>Well... computers are not getting that much faster!! Today the trend for general purpose chips is the increase the number of cores along with some slight improvments in IPC - Instructions Per Clock.  The slowdown might be cuased because of lack of <a href="https://www.theregister.com/2022/07/18/electrical_engineers_extinction/">engineers</a> along with technical difficulties we experience. <br /> The traditional way chips have gotten faster is by the exploitation of <a href="https://youtu.be/Nb2tebYAaOA?t=220">parallelism within code programmers write</a> better proccess nodes and higher clock speeds. Whether it is by predicting branches, executing multiple instructions at different locations on the hardware, running other code while the cpu waits for memory using hyperthreading or clock speed and node proccess improvements, today the performance gains from these techniques reached a plateau where any improvement requires more hard work than ever before and give diminishing returns.</p>
 <p>While hardware improvements can be made with time, software improvemnts can be made easily with each new software created. Because I advocate for a culture where quality should be regarded as a high priority I am bringing this topic up. Part of the value we can bring to users is the speed and bug free user experience, so I spend a considerable amount of time talking about it right now. As my advice is partially connected to the future I want to see.</p>
 
-<h2 id="codereuse">Code reuse and trade-offs</h2>
+<h2 id="code-reuse">Code reuse and trade-offs</h2>
 <p>Seemingly good practices like code-reuse are over-used irresponsibly, with people including huge libraries for the use of a single function.</p>
 <p>Sometimes it is in search of a high quality library that implementes something you are not an expert on. It can be the community around the library along with the increase transferability of skills across teams. Maybe you just don't want to maintain that part. These are the reasons one might turn to reusing code instead of coding it from scratch.</p>
 <p>On the other hand, using other people's code means conforming to the constraints that the people who created the library had. Bigger libraries impose more contraints, and more libraires impose more contraints. If the constraints don't meet yours, you might end-up spending more time on adjusting your/other's code to make it work than if you had wrote it from scratch. And if you have invested too much into a bad library... too bad.</p> 
@@ -112,7 +132,7 @@
 
 <script>
   var h2_headings = document.querySelectorAll("h2");
-  var table = document.getElementById("table_of_content");
+  var table = document.getElementById("navigation-bar");
   if (h2_headings.length > 0) {
     var inner = "";
     inner += '<ul>\n';
