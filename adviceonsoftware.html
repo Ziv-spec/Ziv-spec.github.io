@@ -11,6 +11,7 @@
     font-family: Arial;
     line-height: 1.15;
     display: block;
+    flex: 0 0 16rem;
   }
   a.active {
    color: var(--color-link);
@@ -26,15 +27,35 @@
     text-align: -webkit-match-parent;
   }
   nav {
-    top: 0px;
     position: fixed;
     font-family: Arial;
     line-height: 0.8;
+
+    display: block;
+    margin-left: 8px;
+    flex: 0 0 16rem;
+  }
+  blockquote {
+    color: #828282;
+    border-left: 4px solid #e8e8e8;
+    padding-left: 15px;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+
+    margin-inline-start: 0px;
+  }
+  body {
+    box-sizing: inherit;
+    display: block;
+    margin: 0px;
   }
 </style>
 </head>
 
 <body>
+<header role="banner" style="border-top: 5px solid #424242; border-bottom: 1px solid #e8e8e8; min-height: 55.95px; position: relative;"><div class="wrapper"><a href="/" style="color: #828282; font-size: 22; text-decoration: none;">Bruh</a></div></header>
+
 <nav id="table_of_content">
 <h2>Table of contents</h2>
 </nav>
@@ -71,7 +92,8 @@
 <p>Seemingly good practices like code-reuse are over-used irresponsibly, with people including huge libraries for the use of a single function.</p>
 <p>Sometimes it is in search of a high quality library that implementes something you are not an expert on. It can be the community around the library along with the increase transferability of skills across teams. Maybe you just don't want to maintain that part. These are the reasons one might turn to reusing code instead of coding it from scratch.</p>
 <p>On the other hand, using other people's code means conforming to the constraints that the people who created the library had. Bigger libraries impose more contraints, and more libraires impose more contraints. If the constraints don't meet yours, you might end-up spending more time on adjusting your/other's code to make it work than if you had wrote it from scratch. And if you have invested too much into a bad library... too bad.</p> 
-<p>"it's fine if a library isn't completely perfect, none is, it's a time saver. you sacrifice a little bit of personal peace for the sake of getting some shit done or not needing to have the mental overhead of dealing with another person's crap.  especially not a person or people who you can't directly contact...the maintainers are simply not my friends, they're not my colleagues, if i need LLVM fixed i cry, if i need any huge library fixed i need to go learn their BS along with the original problem space. if i need a feature added, i also cry." - <a href="https://handmade.network/fishbowl/libraries/#chatlog__message-container-1003003441322397797">NeGate 2022</a></p>
+<p>Just like NeGate said on <a href="https://handmade.network/fishbowl/libraries/#chatlog__message-container-1003003441322397797">handmade-network fishbowl:</a></p>
+<blockquote>it's fine if a library isn't completely perfect, none is, it's a time saver. you sacrifice a little bit of personal peace for the sake of getting some shit done or not needing to have the mental overhead of dealing with another person's crap.  especially not a person or people who you can't directly contact...the maintainers are simply not my friends, they're not my colleagues, if i need LLVM fixed i cry, if i need any huge library fixed i need to go learn their BS along with the original problem space. if i need a feature added, i also cry.</blockquote>
 
 <p>Worst are the changing constraints. Usually this happens with package managers when updating dependencies. In general, package managers allow for quick download-and-use type of behaviour with regard to dependencies, and easily updating dependencies. We can notice problems when a library author has decided to change the behaviour or api of his library. The update will cause many programs dependent on that old version's behaviour or api to break. For this reason, explicit upgrades to stable versions of software is prefered, rather than the more convenient automatic option.</p>
 <p>We can see this in the <a href="https://handmade.network/">handmade-community</a> where single-header libraries are popular. e.g. <a href="https://github.com/nothings/stb">`stb_image` and `stb_freetype`.</a> They require explicit upgrades, the ability to modify source code, and they usually do not have dependencies themselves. Along with the fact that single-header libraries are usually smaller, they dodge to some degree the more destructive nature of large managed dependencies while still bringing great value.</p>
