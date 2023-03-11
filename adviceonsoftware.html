@@ -10,7 +10,7 @@
   }
   body {
     letter-spacing: .33px;
-    font-size: 1.05em;
+    font-size: 1.3rem;
     font-weight: 400;
     /* font-family: serif; */
     box-sizing: inherit;
@@ -27,6 +27,7 @@
     line-height: 1.6;
     flex-grow: 1;
     padding: 1rem;
+    min-width: 20rem;
   }
   div.side {
     flex: 0 0 16rem; 
@@ -42,6 +43,7 @@
   nav {
     line-height: 0.8;
     margin-left: 8px;
+    font-size: 0.75rem;
     /* position: fixed;
     top: 0; */
   }
@@ -88,8 +90,10 @@
 <!-- <header role="banner" style="border-top: 5px solid #424242; border-bottom: 1px solid #e8e8e8; min-height: 50.95px; position: relative;"><div class="wrapper"><a href="/" style="color: #828282; font-size: 26; text-decoration: none; float:left; font-weight: 300; line-height: 54px; letter-spacing: -1px; margin-bottom: 0; ">house of useless thoughts</a></div></header> -->
 
 <main class="container flex">
-<div class="side"> <div class="menu"> <nav id="navigation-bar">
-<h2>house of useless thoughts</h2>
+<div class="side"> <div class="menu"> 
+<h4><a href="/" style="color: #626262; text-decoration: solid;">House Of Useless Thoughts</a></h4>
+   
+<nav id="navigation-bar">
 </nav> </div> </div>
 
 <div class="wrapper">
@@ -113,6 +117,9 @@
 <p><code>Python</code> is a high-level language that many programmers use. It is not fast nor simple(the spec is long), but still manages to be beginner friendly, it allows for much freedom by leveraging libraries written in other languages and completely hides anything that might go on in the computer for the benefit of the programmer. Many people prefer it for many reasons but just like I said at the beginning these langauges are tools, you need to look and see which one fits the job best and then use whichever you might want.</p>
 <p>The choice of languages and order is progressive. Each language hides more details, and frees the programmers mind from them. This of course comes at some cost, but it is a cost we all are willing to pay for the freedom it gives at the end. If the cost is high enough we should look for alternatives but it is very important to question the cost first. Many modern programmers forget about the cost as they are not familiar with it, I hope you can make that choice correctly. This is a brief about in my opinion important languages to be familiar with. There are <a href="https://people.inf.ethz.ch/wirth/Miscellaneous/IEEE-Annals.pdf">many more if you are interested</a>. </p>
 
+<h2 id="abstractions">Abstractions</h2>
+<p>TODO: Fill this out</p>
+
 <h2 id="code-reuse">Code reuse and trade-offs</h2>
 <p>Seemingly good practices like code-reuse are over-used irresponsibly, with people including huge libraries for the use of a single function.</p>
 <p>Sometimes it is in search of a high quality library that implementes something you are not an expert on. It can be the community around the library along with the increase transferability of skills across teams. Maybe you just don't want to maintain that part. These are the reasons one might turn to reusing code instead of coding it from scratch.</p>
@@ -129,6 +136,7 @@
 <p>We create software because we want to create value for others. Don't forget that.  When you want to create a project for someone to use, you must think of the value you provide to them, and how you should advance should be aligned to the path in which you can bring more value.  </p>
 <p>No user wants to have their program crash, no user wants to click on something only to wait for something to happen in the background.  When you are more advanced look for opportunities to bring more value.</p>
 
+<hr>
 <h2 id="decline-in-culture">Decline in culture</h2>
 <p>Usually people subscrible to different ideas and cultures when they are surrounded by them. When the culture advocates for the production of high-quality good products, people will produce high-quality products and yet the software culture seems to advocate for fast development time at the expense of the user experience.</p>
 <p>Have you ever had your computer crash? Maybe a program crashed without saving the progress? Or did you notice that your old computer slows down as you update your computer to newer versions? Did you ever question why a simple app requires so much space to download even though it seems to be pretty simple? Most people have experienced bugs, crashes, restarts, and big bloated software that hangs every once in a while. This is the result of the decline in culture, where bad user experience doesn't matter and it has become acceptable to face bugs every once in a while or wait for trivial things to load.</p>
