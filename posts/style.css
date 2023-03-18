@@ -66,20 +66,6 @@ blockquote {
   margin-inline-start: 0px;
 }
 
-
-@media screen and (max-width:56rem) {
-  div.side {
-    flex: 0 0 0; 
-  }
-  div.menu {
-    visibility: hidden;
-    margin-inline-start: -16rem;
-    font-size: 16px;
-    z-index: 1
-  }
-}
-
-
 span.sidenote { 
   float:right;
   margin-right: -50%;
@@ -94,6 +80,28 @@ span.sidenote::before {
   font-size: 1rem;
   color: #2255ee
 }
+
+@media screen and (max-width:56rem) {
+  div.side {
+    visibility: hidden;
+    flex: 0 0 0; 
+  }
+  div.menu {
+    visibility: hidden;
+    margin-inline-start: -16rem;
+    font-size: 16px;
+    z-index: 1
+  }
+
+  span.sidenote { 
+    visibility: hidden;
+  }
+  span.sidenote::before {
+    visibility: hidden;
+  }
+}
+
+
 label.sidenote-number {
   counter-increment: sidenote-counter;
   font-size: 1rem;
