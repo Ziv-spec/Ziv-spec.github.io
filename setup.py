@@ -81,7 +81,7 @@ def generate_posts(path):
 </div></div>
 
 <div class="wrapper">
-<h1 style="line-height: 0.1; ">{POST_TITLE}</h1>
+<h1 style="line-height: 0.8; ">{POST_TITLE}</h1>
 <i>{POST_DATE}</i>
 {content}
 </div>

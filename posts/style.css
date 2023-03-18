@@ -92,18 +92,21 @@ span.sidenote::before {
     font-size: 16px;
     z-index: 1
   }
-}
 
-@media screen and (max-width:65rem) {
+
   span.sidenote { 
     visibility: hidden;
+    margin-right: 0%;
+    display: none;
     flex: 0 0 0;
   }
   span.sidenote::before {
     visibility: hidden;
     flex: 0 0 0;
   }
+
 }
+
 
 
 label.sidenote-number {
