@@ -23,6 +23,7 @@ div.wrapper {
   flex-grow: 1;
   padding: 1rem;
   min-width: 20rem;
+  font-family: serif;
 }
 div.side {
   flex: 0 0 16rem; 
@@ -93,7 +94,6 @@ span.sidenote::before {
     z-index: 1
   }
 
-
   span.sidenote { 
     visibility: hidden;
     margin-right: 0%;
@@ -105,6 +105,9 @@ span.sidenote::before {
     flex: 0 0 0;
   }
 
+  h1 { 
+    font-size: 25pt;
+  }
 }
 
 
