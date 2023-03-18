@@ -88,16 +88,20 @@ span.sidenote::before {
   }
   div.menu {
     visibility: hidden;
-    margin-inline-start: -16rem;
+    /* margin-inline-start: -16rem; */
     font-size: 16px;
     z-index: 1
   }
+}
 
+@media screen and (max-width:65rem) {
   span.sidenote { 
     visibility: hidden;
+    flex: 0 0 0;
   }
   span.sidenote::before {
     visibility: hidden;
+    flex: 0 0 0;
   }
 }
 
@@ -107,7 +111,6 @@ label.sidenote-number {
   font-size: 1rem;
 }
 label.sidenote-number::after {
-  /* font-family: et-book-roman-old-style; */
   content: counter(sidenote-counter);
   font-size: 1rem;
   position: relative;
