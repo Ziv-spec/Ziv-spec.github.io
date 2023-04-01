@@ -110,8 +110,6 @@ span.sidenote::before {
   }
 }
 
-
-
 label.sidenote-number {
   counter-increment: sidenote-counter;
   font-size: 1rem;
