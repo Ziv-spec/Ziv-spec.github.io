@@ -1,10 +1,13 @@
 import sys
 from http.server import HTTPServer, SimpleHTTPRequestHandler
+import time
 
 HOST_NAME = "localhost"
 PORT = 8080
 
 SITE_NAME = "House Of Useless Thoughts"
+SITE_BACKGROUND = 'f1e6ae'
+SITE_FOREGROUND = 'fff8d1' 
 
 EXCLUDE = [ 
   'links.html'
@@ -32,18 +35,21 @@ def generate_excluded_posts(path):
 
 <h1>{POST_TITLE}</h1>
 <i>{POST_DATE}</i>
+<body style="background-color: #{SITE_BACKGROUND}">
+
 {content}
+</body>
 """
   with open('posts/' + path, 'w', encoding='utf-8') as f:
     f.write(result)
+  return POST_TITLE, POST_DATE
 
 def generate_posts(path):
   if not path.endswith('.html') or path == 'index.html':
     return
 
   if path in EXCLUDE:
-    generate_excluded_posts(path)
-    return
+    return generate_excluded_posts(path)
 
   POST_TITLE, POST_DATE = '', ''
   content = ''
@@ -73,14 +79,14 @@ def generate_posts(path):
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+<body style="background-color: #{SITE_BACKGROUND}">
 <main class="container flex">
 <div class="side"><div class="menu"> 
 <h4><a href="/" style="color: #626262; text-decoration: solid;">{SITE_NAME}</a></h4>
 <nav id="navigation-bar"></nav>
 </div></div>
 
-<div class="wrapper">
+<div class="wrapper" style="background-color: #{SITE_FOREGROUND}" >
 <h1 style="line-height: 0.8; ">{POST_TITLE}</h1>
 <i>{POST_DATE}</i>
 {content}
@@ -98,12 +104,10 @@ def generate_posts(path):
   with open('posts/' + path, 'w', encoding='utf-8') as post:
     post.write(result)
 
+  return POST_TITLE, POST_DATE
 
 def read_html_template(path):
-  if 'posts' in path:
-    generate_posts(path[len('posts/'):])
-  else: 
-    generate_posts(path)
+  # _ = generate_posts(path[len('posts/'):]) if 'posts' in path else generate_posts(path)
 
   err = False 
   try:
@@ -121,14 +125,21 @@ class PythonServer(SimpleHTTPRequestHandler):
       self.path = '/index.html'
 
     if self.path is not None:
+      st = time.perf_counter()
       content, err = read_html_template(self.path[1:]) 
+      et = time.perf_counter()
+      print(f'time to get bytes   {et-st:.4f}')
       if err: 
         self.send_response(404, "File not found")
-        content = '<body><h1 style="text-align: center;color: red;">404 ERROR, FILE NOT FOUND<h1></body>'
+        content = '<body style="background-color: #FFEC8B"><h1 style="text-align: center;color: red;">404 ERROR, FILE NOT FOUND<h1></body>'
       else: 
         self.send_response(200, "OK")
       self.end_headers()
+
+      st = time.perf_counter()
       self.wfile.write(bytes(content, "utf-8"))
+      et = time.perf_counter()
+      print(f'time to write bytes {et-st:.4f}')
               
   def do_POST(self):
     pass
@@ -136,13 +147,50 @@ class PythonServer(SimpleHTTPRequestHandler):
 if __name__ == "__main__":
 
   # generate posts
+  titles_and_dates = []
+
   import os 
   for file in os.listdir():
     if file.endswith('.html') and 'index' not in file and file not in EXCLUDE:
-      generate_posts(file)
+      titles_and_dates.append((file, *generate_posts(file)))
   for path in EXCLUDE: 
     if path == 'index.html': continue
-    generate_excluded_posts(path)
+    titles_and_dates.append((path, *generate_excluded_posts(path)))
+  
+
+  content = ''
+  for file, title, date in titles_and_dates:
+    content += f'<div><div class="pd">{date}</div><a href="posts/{file}">{title[1:]}</a></div>\n'
+
+  # generate first page
+  front_page_html = f"""
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  li {{
+    list-style: none;
+  }}
+  div {{
+    display: flex;
+  }}
+  div.pd {{
+    width: 4em; 
+    flex-shrink: 0; 
+    padding-bottom: 0.9em;
+  }}
+</style>
+</head>
+
+<div style="display:block;">
+<div><div class="pd">xx/xx</div><a href=".">House Of Useless Thoughts</a></div>
+{content}
+</div>
+
+</html>
+"""
+  with open('index.html', 'w') as f: 
+    f.write(front_page_html)
 
   # create server
   server = HTTPServer((HOST_NAME, PORT), PythonServer)

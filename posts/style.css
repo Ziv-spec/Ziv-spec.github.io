@@ -12,7 +12,7 @@ body {
   counter-reset: sidenote-counter
 }
 .container {
-  max-width: 80rem;
+  max-width: 90rem;
   margin: 0 auto;
 }
 .flex {
@@ -21,7 +21,7 @@ body {
 div.wrapper {
   line-height: 1.6;
   flex-grow: 1;
-  padding: 1rem;
+  padding: 4rem;
   min-width: 20rem;
   font-family: serif;
 }
@@ -82,7 +82,7 @@ span.sidenote::before {
   color: #2255ee
 }
 
-@media screen and (max-width:56rem) {
+@media screen and (max-width:70rem) {
   div.side {
     visibility: hidden;
     flex: 0 0 0; 
@@ -109,6 +109,13 @@ span.sidenote::before {
     font-size: 25pt;
   }
 }
+
+@media screen and (max-width:50rem) {
+  div.wrapper {
+    padding: 1rem;
+  }
+}
+
 
 label.sidenote-number {
   counter-increment: sidenote-counter;
