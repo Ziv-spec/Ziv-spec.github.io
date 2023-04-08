@@ -107,7 +107,7 @@ def generate_posts(path):
   return POST_TITLE, POST_DATE
 
 def read_html_template(path):
-  # _ = generate_posts(path[len('posts/'):]) if 'posts' in path else generate_posts(path)
+  _ = generate_posts(path[len('posts/'):]) if 'posts' in path else generate_posts(path)
 
   err = False 
   try:
@@ -125,10 +125,7 @@ class PythonServer(SimpleHTTPRequestHandler):
       self.path = '/index.html'
 
     if self.path is not None:
-      st = time.perf_counter()
       content, err = read_html_template(self.path[1:]) 
-      et = time.perf_counter()
-      print(f'time to get bytes   {et-st:.4f}')
       if err: 
         self.send_response(404, "File not found")
         content = '<body style="background-color: #FFEC8B"><h1 style="text-align: center;color: red;">404 ERROR, FILE NOT FOUND<h1></body>'
@@ -136,10 +133,7 @@ class PythonServer(SimpleHTTPRequestHandler):
         self.send_response(200, "OK")
       self.end_headers()
 
-      st = time.perf_counter()
       self.wfile.write(bytes(content, "utf-8"))
-      et = time.perf_counter()
-      print(f'time to write bytes {et-st:.4f}')
               
   def do_POST(self):
     pass
