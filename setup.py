@@ -6,8 +6,8 @@ HOST_NAME = "localhost"
 PORT = 8080
 
 SITE_NAME = "House Of Useless Thoughts"
-SITE_BACKGROUND = 'f1e6ae'
-SITE_FOREGROUND = 'fff8d1' 
+SITE_BACKGROUND = 'ccc480' # 'f1e6ae'
+SITE_FOREGROUND = 'fff6a0' # 'fff8d1' 
 
 EXCLUDE = [ 
   'links.html'
