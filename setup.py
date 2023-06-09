@@ -11,7 +11,6 @@ SITE_FOREGROUND = 'fff8d1' # 'fff6a0'
 
 EXCLUDE = [ 
   'links.html',
-  'trash.html'
 ]
 
 def generate_excluded_posts(path):
