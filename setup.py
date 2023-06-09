@@ -10,7 +10,8 @@ SITE_BACKGROUND = 'f1e6ae' # 'ccc480'
 SITE_FOREGROUND = 'fff8d1' # 'fff6a0'
 
 EXCLUDE = [ 
-  'links.html'
+  'links.html',
+  'trash.html'
 ]
 
 def generate_excluded_posts(path):
@@ -28,18 +29,7 @@ def generate_excluded_posts(path):
     for line in lines[4:]:
       content += line + '\n'
 
-  result = f"""
-<head>
-<title>{POST_TITLE}</title>
-</head>
-
-<h1>{POST_TITLE}</h1>
-<i>{POST_DATE}</i>
-<body style="background-color: #{SITE_BACKGROUND}">
-
-{content}
-</body>
-"""
+  result = content
   with open('posts/' + path, 'w', encoding='utf-8') as f:
     f.write(result)
   return POST_TITLE, POST_DATE
@@ -65,7 +55,7 @@ def generate_posts(path):
 
     for line in lines[4:]: 
       l = line[:2] if len(line) > 0 else line
-      if l == '' or l == '<h' or l == '<p': l = line + '\n'
+      if l == '<li' or l == '' or l == '<h' or l == '<p' or l == '\n': l = line + '\n'
       else: l = '<p>' + line + '</p>\n'
       content += l
       

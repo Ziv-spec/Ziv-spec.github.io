@@ -16,8 +16,9 @@ body {
   margin: 0 auto;
 }
 .flex {
-    display: flex;
+  display: flex;
 }
+
 div.wrapper {
   line-height: 1.6;
   flex-grow: 1;
@@ -40,8 +41,6 @@ nav {
   line-height: 0.8;
   margin-left: 8px;
   font-size: 0.75rem;
-  /* position: fixed;
-  top: 0; */
 }
 
 a { 
