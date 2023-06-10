@@ -28,20 +28,42 @@ date: 4/23
     font-style: italic;
     margin-inline-start: 0px;
   }
-  a {color:#bf3211; text-decoration: none } 
+
+  a { color:#bf3211; text-decoration: none;  transition: all 0.6s ease-out; }
+  a:hover {
+    background: #c2bc82; 
+    animation-name: highlight;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; /* Make the animation run back and forth */
+  } 
+  @keyframes highlight {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+    50% {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
 	@media (prefers-color-scheme: dark){
 		body {color:#e6e6e6; background:#000}
-		/* a:link {color:#cdf}
-		a:hover, a:visited:hover {color:#def}
-		a:visited {color:#dcf}
-  */
-    blockquote { color: #8fc282; border-left: 4px solid #2e4f2e; }
+    blockquote { color: #bebebe; border-left: 4px solid #4d4d4d; }
+    a { color:#99270e}
 	}
 	@media print{
 		body{
 			max-width:none
 		}
 	}
+
+  ul.right { float: left; padding-right: 30px; list-style: none }
+  ul.left { float: left; padding-right: 0px; list-style: none }
+  @media screen and (max-width:70rem) {
+    ul.right { float: none; }
+    ul.left { float: none; padding-right: 30px; }
+  }
 </style>
 
 
@@ -50,14 +72,13 @@ date: 4/23
 <i> 4/23</i>
 <hr>
 
-
 <blockquote>
-<i>In a constant battle against entropy, wehre everything wants to be at equilibrium, we find intelligence fighting to put order to the universe - Naviary Music</i>
+<i>In our skulls we carry around three pounds of slimy, wet, grayish tissue, corrugated like crumpled toilet paper... Within that gray wet lump is the power to search paths through the great web of causality, and find a road to the seemingly impossible. - <a href="https://www.readthesequences.com/The-Power-Of-Intelligence">Eliezer Yudkowsky</a></i>
 </blockquote>
-
-
 <h2>Blogs</h2>
-<ul>
+<div>
+</ul>
+<ul class="right">
 <li><a href="https://samoburja.com/">samo-buraj</a></li>
 <li><a href="http://paulgraham.com/articles.html">paul-graham</a></li>
 <li><a href="https://slatestarcodex.com/about/">scott alexander</a></li>
@@ -68,6 +89,8 @@ date: 4/23
 <li><a href="http://omermoav.com">over-moav-economy</a></li>
 <li><a href="https://geohot.github.io/blog">george-hotz</a></li>
 <li><a href="https://rfleury.com">ryan-fleury</a></li>
+</ul>
+<ul class="left">
 <li><a href="http://worrydream.com/">bret-victor</a></li>
 <li><a href="https://hpbn.co/">high performance browser networking</a></li>
 <li><a href="https://floooh.github.io/">floooh</a></li>
@@ -79,10 +102,7 @@ date: 4/23
 <li><a href="https://andymatuschak.org/">andy-matuschak</a></li>
 <li><a href="https://eater.net">ben-eater</a></li>
 </ul>
-<blockquote>
-<i>In our skulls we carry around three pounds of slimy, wet, grayish tissue, corrugated like crumpled toilet paper... Within that gray wet lump is the power to search paths through the great web of causality, and find a road to the seemingly impossible. - <a href="https://www.readthesequences.com/The-Power-Of-Intelligence">Eliezer Yudkowsky</a></i>
-</blockquote>
-
+</div>
 
 <h2>Enlightening Ideas & Information</h2>
 
@@ -152,6 +172,10 @@ date: 4/23
 <li><a href="http://immersivemath.com/ila/tableofcontents.html?">Linear algebra text course</a></li>
 <li><a href="https://www.lem.ma/books/AIApowDnjlDDQrp-uOZVow/landing">Linear algebra course</a></li>
 </ul>
+
+<blockquote>
+<i>In a constant battle against entropy, wehre everything wants to be at equilibrium, we find intelligence fighting to put order to the universe - Naviary Music</i>
+</blockquote>
 
 <h2>Physics</h2>
 <ul>
