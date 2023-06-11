@@ -10,6 +10,7 @@ date: 6/23
 <link rel="icon" type="image/png" href="data:image/png;base64,">
 <title>Links</title>
 <style>
+  * { box-sizing: border-box; }
   body {
 		margin:1em auto;
 		max-width:50em;
@@ -17,9 +18,7 @@ date: 6/23
 		font:1.2em/1.62 sans-serif;
     background: #f0efd1 /* #fff8d1 */ 
 	}
-	h1,h2,h3 {
-		line-height:1.2
-  }
+	h1,h2,h3 { line-height:1.2 }
   blockquote { 
     color: #0000005c; border-left: 4px solid #0006;
     padding-left: 15px;
@@ -28,43 +27,35 @@ date: 6/23
     font-style: italic;
     margin-inline-start: 0px;
   }
-  a { color:#bf3211; text-decoration: none;  transition: all 0.6s ease-out;  }
-  * {
-    box-sizing: border-box;
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
   }
-  a:hover {
-    background: #c2bc82; 
-    animation-name: highlight;
-    animation-iteration-count: infinite;
-    animation-direction: alternate; /* Make the animation run back and forth */
-  } 
+
+  a { color:#bf3211; text-decoration: none;  transition: all 0.6s ease-out;  }
+  a:hover { background: #c2bc82; animation-name: highlight; } 
   @keyframes highlight {
-    0% {
-      width: 0;
-      opacity: 0;
-    }
-    50% {
-      width: 100%;
-      opacity: 1;
-    }
+    0% { width: 0; opacity: 0; }
+    50% { width: 100%; opacity: 1; }
   }
 
 	@media (prefers-color-scheme: dark){
 		body {color:#e6e6e6; background:#000}
     blockquote { color: #bebebe; border-left: 4px solid #4d4d4d; }
-    a { color:#99270e}
+    a { color:#99270e }
 	}
-	@media print{
-		body{
-			max-width:none
-		}
+	@media print {
+		body{ max-width:none }
 	}
 
-  ul.right { float: left; padding-right: 30px; list-style: none }
-  ul.left { float: left; padding-right: 0px; list-style: none }
+  ul.column { float: left; list-style: none; width: 50% }
+
+  ul.left  { padding-right: 0px; }
+  ul.right { padding-right: 30px; }
   @media screen and (max-width:70rem) {
-    ul.right { float: none; }
-    ul.left { float: none; padding-right: 30px; }
+    ul.column { float: none } 
   }
 </style>
 
@@ -77,12 +68,12 @@ date: 6/23
 <i>In our skulls we carry around three pounds of slimy, wet, grayish tissue, corrugated like crumpled toilet paper... Within that gray wet lump is the power to search paths through the great web of causality, and find a road to the seemingly impossible. - <a href="https://www.readthesequences.com/The-Power-Of-Intelligence">Eliezer Yudkowsky</a></i>
 </blockquote>
 
-<div style='content: ""; clear: both; display: table'>
+<div  class="clearfix">
 
 <div>
 <h2>Blogs</h2>
 </ul>
-<ul class="right">
+<ul class="column left">
 <b>General</b>
 <hr>
 <li><a href="https://samoburja.com/">samo-buraj</a></li>
@@ -90,13 +81,14 @@ date: 6/23
 <li><a href="https://slatestarcodex.com/about/">scott alexander</a></li>
 <li><a href="https://astralcodexten.substack.com">astral-codex-ten</a></li>
 <li><a href="https://ciechanow.ski/archives/">bartosz chiechanowski</a></li>
+<li><a href="https://gwern.net/">Gwern Branwen</a></li>
 <li><a href="http://omermoav.com">over-moav-economy</a></li>
 <li><a href="https://geohot.github.io/blog">george-hotz</a></li>
 <li><a href="https://andymatuschak.org/">andy-matuschak</a></li>
 <li><a href="https://eater.net">ben-eater</a></li>
 <li><a href="https://lexfridman.com/">lexfridman</a></li>
 </ul>
-<ul class="left">
+<ul class="column right">
 <b>Programming</b>
 <hr>
 <li><a href="https://danluu.com">danluu</a></li>
@@ -114,6 +106,7 @@ date: 6/23
 
 <div>
 <h2>Enlightening Ideas & Information</h2>
+  
 <h3>Links</h3>
 <ul>
 <li>
@@ -166,11 +159,10 @@ date: 6/23
 
 </div>
 
-<h2>History, Civilization collapse & Today's reality</h2>
+<h2>I don't know how to call this section</h2>
 <ul>
 <li><a href="https://samoburja.com/essays/">Great founder theory</a></li>
 <li><a href="http://www.arkian.net/about.html">Arkians Ethnicity</a></li>
-<li><a href="http://risk.princeton.edu/img/Historical_Collapse_Resources/Tainter_The_Collapse_of_Complex_Societies_ch_1_2_5_6.pdf">Historical collapse of complex societies</a></li>
 <li><a href="https://www.rfleury.com/li/computers-ownership-agency">Computers, Ownership, Agency</a></li>
 <li><a href="https://www.youtube.com/watch?v=M4LRHJlijVU&t=4437s">1177 B.C.: When Civilization Collapsed | Eric Cline</a></li>
 <li><a href="https://michaelshermer.substack.com/archive">The Skeptic</a></li>
