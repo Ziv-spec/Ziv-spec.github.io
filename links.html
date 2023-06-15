@@ -10,6 +10,10 @@ date: 6/23
 <link rel="icon" type="image/png" href="data:image/png;base64,">
 <title>Links</title>
 <style>
+
+  /* The website tries to closely folow the design of https://bestmotherfucking.website/ */ 
+  /* The general style should follow https://contrastrebellion.com/ for colors to read better */
+
   * { box-sizing: border-box; }
   body {
 		margin:1em auto;
@@ -34,7 +38,7 @@ date: 6/23
     display: table;
   }
 
-  a { color:#bf3211; text-decoration: none;  transition: all 0.6s ease-out;  }
+  a { color:#bf3211; text-decoration: none;  transition: all 0.24s ease-out; font-weight: initial; }
   a:hover { background: #c2bc82; animation-name: highlight; } 
   @keyframes highlight {
     0% { width: 0; opacity: 0; }
@@ -50,13 +54,23 @@ date: 6/23
 		body{ max-width:none }
 	}
 
-  ul.column { float: left; list-style: none; width: 50% }
-
+  ul.s-column { float: left; list-style: none; width: 50%; margin-bottom: auto;}
   ul.left  { padding-right: 0px; }
   ul.right { padding-right: 30px; }
+ 
+  ul.column { float: left; list-style: none; width: 50%; margin-bottom: auto;}
+  ul.column  > li > a { font-weight: 700; }
+  ul.column > li { margin-bottom: 20px; }
+
   @media screen and (max-width:70rem) {
-    ul.column { float: none; width: 100%} 
+    ul.column { float: none; width: 100%; padding-left: 0;} 
+    ul.s-column { float: none; width: 100%; padding-left: 0;} 
   }
+
+  .center { 
+    text-align: center;
+  }
+
 </style>
 
 
@@ -71,9 +85,7 @@ date: 6/23
 <div  class="clearfix">
 <h2>Blogs</h2>
 </ul>
-<ul class="column left">
-<b>General</b>
-<hr>
+<ul class="s-column left">
 <li><a href="https://samoburja.com/">samo-buraj</a></li>
 <li><a href="http://paulgraham.com/articles.html">paul-graham</a></li>
 <li><a href="https://slatestarcodex.com/about/">scott alexander</a></li>
@@ -87,9 +99,7 @@ date: 6/23
 <li><a href="https://eater.net">ben-eater</a></li>
 <li><a href="https://lexfridman.com/">lexfridman</a></li>
 </ul>
-<ul class="column right">
-<b>Programming</b>
-<hr>
+<ul class="s-column right">
 <li><a href="https://danluu.com">danluu</a></li>
 <li><a href="https://rfleury.com">ryan-fleury</a></li>
 <li><a href="http://worrydream.com/">bret-victor</a></li>
@@ -131,6 +141,8 @@ date: 6/23
   <ul>
   <li><a href="https://gwern.net/spaced-repetition">Spaced Repetition for Efficient Learning</a></li>
   <li><a href="http://augmentingcognition.com/ltm.html">Anki for memorizing everything</a></li>
+  <li><a href="https://www.jackkinsella.ie/articles/janki-method">Anki for more technical knowledge</a></li>
+  <li><a href="https://cognitivemedium.com/srs-mathematics">Anki for mathmatics</a></li>
   </ul>
 </li>
 <li>
@@ -152,105 +164,74 @@ date: 6/23
 </ul>
 <b>Books</b>
 <ul>
-<li><a href="https://samoburja.com/eight-books-to-read/">Samo Burja - eight books to read</a></li>
+<li><a href="https://samoburja.com/eight-books-to-read/">Samo Burja - eight books to read</a> (have not read them yet)</li>
 </ul>
 </div>
 
-<h2>I don't know how to call this section</h2>
-<ul>
-<li><a href="https://samoburja.com/essays/">Great founder theory</a></li>
-<li><a href="http://www.arkian.net/about.html">Arkians Ethnicity</a></li>
-<li><a href="https://www.rfleury.com/li/computers-ownership-agency">Computers, Ownership, Agency</a></li>
-<li><a href="https://www.youtube.com/watch?v=M4LRHJlijVU&t=4437s">1177 B.C.: When Civilization Collapsed | Eric Cline</a></li>
-<li><a href="https://michaelshermer.substack.com/archive">The Skeptic</a></li>
+<h2 class="center">Programming</h2>
+
+<div class="clearfix">
+  <ul class="column left">
+    <li ><a href="https://handmadehero.org/">Handmade-Hero</a> is a project by Casey Muratory, created to teach new people how to create games from complete SCRATCH. This is too good to pass by and not watch even just the first 30 epsodes which are not game related</li>
+    <li >If you are looking for a great community to gain much insight and guidence to improve your programming, look no further than <a href="https://handmade.network/">handmade-network</a></li>
+    <li >Every program that wants to utilize the hardware in a good way must use <a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">SIMD</a> to accelerate certain workloads. If you don't know how to use it yet, here is <a href="http://const.me/articles/simd/simd.pdf">great guide to show you</a></li>
+    <li >Low level languages don't manage your memory but, there are many <a href="https://www.gingerbill.org/article/2019/02/01/memory-allocation-strategies-001/">memory allocations strategies </a> to help. By Gingerbill</li>
+    <li >Here are all the <a href="https://akkadia.org/drepper/cpumemory.pdf">things about memory every programmer should know</a> and <a href="https://colin-scott.github.io/personal_website/research/interactive_latency.html">latency numbers every programmer should know</a></li>
+    <li >If you are confused about git like me, <a href="https://blog.plover.com/2022/06/29/#tips">here are some tips</a></li>
+  </ul>
+  <ul class="column right">
+    <li >There are many <a href="https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf">good programming ideas throughout history</a> people are unaware of. To not repeate failed experiments Niklaus Wirth documented the best prominent ideas</li>
+    <li >Agner Fog is a old optimizations type of guy. He has a <a href="https://www.agner.org/">couple x86 optimization guides at his blog</a> which if you are serious about performance programming you should look at</li>
+    <li >Some people are eager to understand how something works. If you want to understand how poeple might go about building a computer <a href="https://www.coursera.org/learn/build-a-computer">nand2tetris</a> tries to do just that</li>
+    <li ><a href="https://web.archive.org/web/20201111234229/https://beginners.re/RE4B-EN.pdf">reverse engineering book</a> is a great book that shows code written in C -> assembly output. With many details around how how assembly programs work</li>
+    <li >Building a font rasterizer from scratch <a href="https://handmade.network/forums/wip/t/7330-implementing_a_font_reader_and_rasterizer_from_scratch,_part_1__ttf_font_reader.">part1</a> and <a href="https://handmade.network/forums/wip/t/7610-reading_ttf_files_and_rasterizing_them_using_a_handmade_approach,_part_2__rasterization">part2</a> with Sean Barrat's approach <a href="https://nothings.org/gamedev/rasterize/">to rasterization</a></li>
+  </ul>
 </ul>
+</div>
 
-<h2>Math</h2>
-<ul>
-<li><a href="https://pimbook.org/">A programmer's introduction to mathematics</a></li>
-<li><a href="https://www.youtube.com/watch?v=yAb12PWrhV0&list=PLIljB45xT85BhzJ-oWNug1YtUjfWp1qAp">Linear algebra video course - NJ Wildberger</a></li>
-<li><a href="http://immersivemath.com/ila/tableofcontents.html?">Linear algebra text course</a></li>
-<li><a href="https://www.lem.ma/books/AIApowDnjlDDQrp-uOZVow/landing">Linear algebra course</a></li>
-</ul>
+<p>NOT YET COMPLETELY CHECKED</p>
 
-<blockquote>
-<i>In a constant battle against entropy, wehre everything wants to be at equilibrium, we find intelligence fighting to put order to the universe - Naviary Music</i>
-</blockquote>
-
-<h2>Physics</h2>
-<ul>
-<li><a href="https://www.feynmanlectures.caltech.edu/">https://www.feynmanlectures.caltech.edu/</a></li>
-<li><a href="https://www.feynmanlectures.caltech.edu/III_92.html">feyman</a></li>
-<li><a href="http://www.astrosen.unam.mx/~posgrado/libros/1_Mechanics_Kittel_BPC.pdf">1_Mechanics_Kittel_BPC</a></li>
-<li><a href="https://diegoclimbing.files.wordpress.com/2014/06/berkeley3-waves.pdf">berkeley3-waves</a></li>
-<li><a href="http://www.astrosen.unam.mx/~posgrado/libros/4_Quantum_Wichmann.pdf">4_Quantum_Wichmann</a></li>
-</ul>
-
-<h2>Programming</h2>
-<ul>
-<li>TODO(ziv): categorize and sort this</li>
-<li><a href="https://handmadehero.org/">handmade-hero</a></li>
-<li><a href="https://handmade.network/">handmade-network</a></li>
-<li><a href="https://en.algorithmica.org/hpc/">high-performance-computing</a></li>
-<li><a href="http://const.me/articles/simd/simd.pdf">simd for beginners</a></li>
-<li><a href="https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf">good ideas throughout history</a></li>
-<li><a href="https://www.agner.org/">agner assembly & performance god</a></li>
-<li>Building a font rasterizer <a href="https://handmade.network/forums/wip/t/7330-implementing_a_font_reader_and_rasterizer_from_scratch,_part_1__ttf_font_reader.">part1</a> and <a href="https://handmade.network/forums/wip/t/7610-reading_ttf_files_and_rasterizing_them_using_a_handmade_approach,_part_2__rasterization">part2</a></li>
-<li><a href="https://www.coursera.org/learn/build-a-computer">nand2tetris</a></li>
-<li><a href="https://www.gingerbill.org/article/2019/02/01/memory-allocation-strategies-001/">Memory allocations ft. Gingerbill</a></li>
-<li><a href="https://akkadia.org/drepper/cpumemory.pdf">things about memory every programmer should know</a></li>
-<li><a href="https://web.archive.org/web/20201111234229/https://beginners.re/RE4B-EN.pdf">reverse engineering book</a></li>
 <li><a href="https://www.phatcode.net/res/223/files/html/toc.html">old x86 assembly</a></li>
 <li><a href="https://travisdowns.github.io/">software performance matters</a></li>
-<li><a href="https://nothings.org/gamedev/rasterize/">part1</a></li>
 <li><a href="https://halt.software/dead-simple-layouts/">dead simple layouts</a></li>
 <li><a href="https://floooh.github.io/2018/06/17/handles-vs-pointers.html">handles vs pointers</a></li>
+<li><a href="https://hillelwayne.com/post/why-dont-people-use-formal-methods/">why don't people use formal methods</a></li>
+<li><a href="https://github.com/srush/GPU-Puzzles">GPU Puzzles (learn how to program your gpu, cuda)</a></li>
+
+<li><a href="https://www.youtube.com/watch?v=5l2wMgm7ZOk">Black Boxes are so Hard to Reuse - video</a></li>
+
+<li><a href="https://youtu.be/uehGqieEbus">3d-programming-from-scratch</a></li>
+<li><a href="https://www.youtube.com/watch?v=ajv46BSqcK4&t=794s">GJK Algorithm</a></li>
+<li><a href="https://craftinginterpreters.com/contents.html">craftinginterperters</a></li>
+<li><a href="https://mu.krj.st/wave/">creating wav files</a></li>
+<li><a href="https://www.youtube.com/watch?v=MXs_vkc8hpY">fluid simulation</a> & <a href="https://www.youtube.com/watch?v=iKAVRgIrUOU">How to write an Eulerian fluid simulator with 200 lines of code</a></li>
+
+<li><a href="https://bestmotherfucking.website/">best motherfucking website</a></li>
+
+<li><a href="https://people.inf.ethz.ch/wirth/Miscellaneous/IEEE-Annals.pdf">brief histroy of software engineering</a></li>
+<li><a href="https://people.inf.ethz.ch/wirth/Miscellaneous/ComputersAndComputing.pdf">computers and copmuting</a></li>
+
+
+<p>NOT YET COMPLETELY CHECKED + Extremely specific to use cases which not many people might need</p>
 <li><a href="https://www.quantamagazine.org/computer-scientist-donald-knuth-cant-stop-telling-stories-20200416/">donald-knuth</a></li>
 <li><a href="https://darksi.de/d.sea-of-nodes/">sea of nodes</a></li>
 <li><a href="http://burtleburtle.net/bob/c/lookup3.c">good hash function</a></li>
 <li><a href="http://silverspaceship.com/hovalaag/">VLIW Assembly Language as a Game</a></li>
-<li><a href="https://www.youtube.com/watch?v=MXs_vkc8hpY">fluid simulation</a> & <a href="https://www.youtube.com/watch?v=iKAVRgIrUOU">How to write an Eulerian fluid simulator with 200 lines of code</a></li>
-<li><a href="https://youtu.be/uehGqieEbus">3d-programming-from-scratch</a></li>
-<li><a href="https://bestmotherfucking.website/">best motherfucking website</a></li>
 <li><a href="https://www.maths.ed.ac.uk/~v1ranick/papers/wilsongraph.pdf">graph theory</a></li>
 <li><a href="https://www.theodinproject.com/">web programming - odin project</a></li>
-<li><a href="https://blog.plover.com/2022/06/29/#tips">all about git</a></li>
 <li><a href="https://ourmachinery.com/post/virtual-memory-tricks/">virtual memory tricks</a></li>
 <li><a href="https://www.youtube.com/watch?v=YE8MVNMzpbo">Killing the Walk Monster</a></li>
 <li><a href="https://blog.mapbox.com/a-dive-into-spatial-search-algorithms-ebd0c5e39d2a">Spatial search algorithms</a></li>
 <li><a href="https://www.albertford.com/shadowcasting/">Symmetric Shadow casting</a></li>
-<li><a href="https://www.youtube.com/watch?v=ajv46BSqcK4&t=794s">GJK Algorithm</a></li>
 <li><a href="https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/">Law of leaky abstractions</a></li>
 <li><a href="https://www.youtube.com/watch?v=36myc8wQhLo">The OS doesn't control all hardware?</a></li>
 <li><a href="http://mattmahoney.net/dc/dce.html">Data Compression Explained - book</a></li>
-<li><a href="https://www.youtube.com/watch?v=5l2wMgm7ZOk">Black Boxes are so Hard to Reuse - video</a></li>
 <li><a href="https://note.com/ruiu/n/n9948f0cc3ed3">worse is better</a></li>
-<li><a href="https://colin-scott.github.io/personal_website/research/interactive_latency.html">Latency Numbers Every Programmer Should Know</a></li>
-<li><a href="https://mu.krj.st/wave/">creating wav files</a></li>
 <li><a href="http://norvig.com/21-days.html#answers">learn programming in 10 years</a></li>
-<li><a href="https://hillelwayne.com/post/why-dont-people-use-formal-methods/">http://norvig.com/21-days.html#answers</a></li>
-<li><a href="https://github.com/srush/GPU-Puzzles">GPU Puzzles (learn how to program your gpu, cuda)</a></li>
-</ul>
 
-<h2>Compiler stuff</h2> 
-<ul>
-<li><a href="https://www.destroyallsoftware.com/screencasts/catalog/a-compiler-from-scratch">AST</a></li>
-<li><a href="https://craftinginterpreters.com/contents.html">craftinginterperters</a></li>
-<li><a href="https://www-sigbus-info.translate.goog/compilerbook?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US#cpu%E3%81%A8%E3%83%A1%E3%83%A2%E3%83%AA">C compiler from scratch</a></li>
-<li><a href="https://github.com/RealNeGate/Cuik">Cuik</a></li>
-<li><a href="https://github.com/rui314/9cc">9cc</a></li>
-<li><a href="https://people.inf.ethz.ch/wirth/Miscellaneous/IEEE-Annals.pdf">brief histroy of software engineering</a></li>
-<li><a href="https://people.inf.ethz.ch/wirth/Miscellaneous/ComputersAndComputing.pdf">computers and copmuting</a></li>
-<li><a href="https://gist.github.com/mikesmullin/6259449#appendix-windows-pecoff-binary-format">resources for the pe file format</a></li>
-<li><a href="https://raw.githubusercontent.com/corkami/pics/master/binary/pe101/pe101.png">Amazing reference pe file format poster</a></li>
-<li><a href="https://www.cnblogs.com/hustcat/articles/1730793.html">Application for finding information inside a pe file</a></li>
-<li><a href="https://gist.github.com/mikesmullin/6259449">resources for machine code (I recomment reading the intel guide)</a></li>
-<li><a href="https://graphics.stanford.edu/~seander/bithacks.html#ReverseParallel">bit magic</a></li>
-<li><a href="https://www3.nd.edu/~dthain/compilerbook/">compilerbook</a></li>
-<li><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">incremental approach to compilers</a></li>
-<li><a href="https://aaronbloomfield.github.io/pdr/book/x86-32bit-ccc-chapter.pdf">calling convention</a></li>
-<li><a href="https://www.youtube.com/watch?v=-ti07Z0xKKg">compilerbook codegen video</a></li>
-<li><a href="http://dmitrysoshnikov.com/courses/compiler-engineer-path/#recommended-literature">suggested way to learn about compilers</a></li>
+<li><a href="https://pomb.us/build-your-own-react/">build your own react</a></li>
+<li><a href="https://gasiulis.name/vector-graphics-on-gpu/">vector graphics on gpu</a></li>
+
 </ul>
 
 <h2>Machine learning</h2>
@@ -265,6 +246,32 @@ date: 6/23
 <li><a href="https://siboehm.com/articles/22/Fast-MMM-on-CPU">fast gemm algorithm explanation</a></li>
 <li><a href="https://towardsdatascience.com/a-wizards-guide-to-adversarial-autoencoders-part-2-exploring-latent-space-with-adversarial-2d53a6f8a4f9">Guide to autoencoders</a></li>
 </ul>
+
+<h2>I don't know how to call this section</h2>
+<ul>
+<li><a href="https://www.rfleury.com/li/computers-ownership-agency">Computers, Ownership, Agency</a></li>
+</ul>
+
+<h2>Math - A further look into each of the links here is required</h2>
+<ul>
+<li><a href="https://pimbook.org/">A programmer's introduction to mathematics</a></li>
+<li><a href="https://www.youtube.com/watch?v=yAb12PWrhV0&list=PLIljB45xT85BhzJ-oWNug1YtUjfWp1qAp">Linear algebra video course - NJ Wildberger</a></li>
+<li><a href="http://immersivemath.com/ila/tableofcontents.html?">Linear algebra text course</a></li>
+<li><a href="https://www.lem.ma/books/AIApowDnjlDDQrp-uOZVow/landing">Linear algebra course</a></li>
+</ul>
+
+<blockquote>
+<i>In a constant battle against entropy, wehre everything wants to be at equilibrium, we find intelligence fighting to put order to the universe - Naviary Music</i>
+</blockquote>
+
+<h2>Physics - A further look into each of the links here is required</h2>
+<ul>
+<li><a href="https://www.feynmanlectures.caltech.edu/">feyman</a></li>
+<li><a href="http://www.astrosen.unam.mx/~posgrado/libros/1_Mechanics_Kittel_BPC.pdf">1_Mechanics_Kittel_BPC</a></li>
+<li><a href="https://diegoclimbing.files.wordpress.com/2014/06/berkeley3-waves.pdf">berkeley3-waves</a></li>
+<li><a href="http://www.astrosen.unam.mx/~posgrado/libros/4_Quantum_Wichmann.pdf">4_Quantum_Wichmann</a></li>
+</ul>
+
 
 <h2>Cool game dev stuff </h2>
 <ul>
@@ -287,7 +294,44 @@ date: 6/23
 
 <h2>Things to sort and make sure is good</h2>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=sBTI9qiH4UE&t=276s">Hangboard Training 2 Times Per Day For 30 Days</a></li>
+<li>seems good <a href="https://www.canva.com/colors/color-wheel/">color wheel for color picking, helpful for beginners like me</a></li>
+<li>seems good <a href="https://www.engraved.blog/but-why-is-diversification-a-free-lunch/">I want to explain why diversifying investments in a portfolio is a good idea</a></li>
+
+<li>seems good <a href="https://www.youtube.com/watch?v=sBTI9qiH4UE&t=276s">Hangboard Training 2 Times Per Day For 30 Days</a></li>
+<li><a href="https://hubermanlab.com/wp-content/uploads/2021/06/Protocols_Endurance_VersionB.pdf">hubermanlab - 4 TYPES of ENDURANCE TRAINING: SUMMARY from Episode #23</a></li>
+<li><a href="https://blueprint.bryanjohnson.co/">Blueprint - slowing down your ageing?</a></li>
+
+<li><a href="https://en.algorithmica.org/hpc/">high-performance-computing</a></li>
+
+<li><a href="https://samoburja.com/essays/">Great founder theory</a></li>
+<li><a href="https://www.youtube.com/watch?v=M4LRHJlijVU&t=4437s">1177 B.C.: When Civilization Collapsed | Eric Cline</a></li>
+<li><a href="https://michaelshermer.substack.com/archive">The Skeptic</a></li>
+
+<li><a href="https://graymirror.substack.com/p/1-a-general-theory-of-collaboration">general theory of collaboration</a></li>
+<li><a href="https://2π.com/22/approximation/index.html">Approximation theory</a></li>
+
+<li><a href="http://www.brokenthorn.com/Resources/OSDevIndex.html">Operating System Development Series</a></li>
+<li><a href="https://matklad.github.io/2023/05/21/resilient-ll-parsing-tutorial.html">Resilient LL Parsing Tutorial</a></li>
+<li><a href="https://www.catch22.net/tuts/neatpad/piece-chains/">Piece chains (text-editor related)</a></li>
+<li><a href="https://pixelmager.github.io/linelight/banding.html">Removing Banding in Linelight</a></li>
+
+<li><a href="https://www.unqualified-reservations.org/">Unqualified reservations</a></li>
+<li><a href="http://web.archive.org/web/20221209222312/https://apokekrummenain.substack.com/p/the-necessary-and-the-ephemeral-the">"The Political Illusion" by Jacques Ellul - review</a></li>
+<li><a href="http://www.arkian.net/about.html">Arkians Ethnicity</a></li>
+<li><a href="https://astralcodexten.substack.com/p/skills-plateau-because-of-decay-and">Why do skill plateau?</a></li>
+<li><a href="https://nemets.substack.com/p/reading-list">A reading list that should get checked (about prehistory and Eastern Europe/the Steppe)</a></li>
+
+<li>Nice playlist of relaxing music for focus (helps at the beginning stages most but kind of ruines it later)</li>
+<iframe style="border-radius:12px; max-width: 65%" src="https://open.spotify.com/embed/artist/6LsRviViXR7UshzkUtfRDu?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</ul>
+
+<h2>Things that might never get sorted</h2>
+<ul>
+  <li><a href="https://www.eblong.com/zarf/markov/">Fun With Markov Chains</a></li>
+  <li><a href="https://www.cell.com/cancer-cell/pdf/S1535-6108(02)00133-2.pdf">Can a biologist fix a radio?—Or, what I
+learned while studying apoptosis</a></li>
+
+
 </ul>
 
 </article>
