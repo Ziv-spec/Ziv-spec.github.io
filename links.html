@@ -4,75 +4,242 @@ date: 6/23
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="light" lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+
+<!-- If there never is a need for mathmatics https://katex.org/docs/browser.html -->
+
 <link rel="icon" type="image/png" href="data:image/png;base64,">
 <title>Links</title>
 <style>
-
   /* The website tries to closely folow the design of https://bestmotherfucking.website/ */ 
-  /* The general style should follow https://contrastrebellion.com/ for colors to read better */
+  /*! MIT License | github.com/schnerring/hugo-theme-gruvbox */
+  :root[data-theme=light] {
+    --bg:var(--bg0);   --bg0:#fbf1c7;
+    --bg0_h:#f9f5d7; --bg0_s:#f2e5bc;
+    --bg1:#ebdbb2;   --bg2:#d5c4a1;
+    --bg3:#bdae93;   --bg4:#a89984;
+    --fg:var(--fg1);   --fg0:#282828;
+    --fg1:#3c3836;   --fg2:#504945;
+    --fg3:#665c54;   --fg4:#7c6f64;
+    --gray1:var(--fg4);  --gray2:#928374;
+    --red1:#cc241d;    --red2:#9d0006;
+    --green1:#98971a;  --green2:#797403;
+    --yellow1:#d79921; --yellow2:#b57614;
+    --blue1:#458588;   --blue2:#076678;
+    --purple1:#b16286; --purple2:#8f3f71;
+    --aqua1:#689d6a;   --aqua2:#427b58;
+    --orange1:#d65d0e; --orange2:#af3a03;
+  }
+  [data-theme=light]:root .light--hidden {
+    display:none
+  }
+  :root[data-theme=dark] {
+    --bg:var(--bg0);    --bg0:#282828;
+    --bg0_h:#1d2021;  --bg0_s:#32302f;
+    --bg1:#3c3836;    --bg2:#504945;
+    --bg3:#665c54;    --bg4:#7c6f64;
+    --fg:var(--fg1);    --fg0:#fbf1c7;
+    --fg1:#ebdbb2;    --fg2:#d5c4a1;
+    --fg3:#bdae93;    --fg4:#a89984;
+    --gray1:var(--fg4); --gray2:#928374;
+    --red1:#cc241d;   --red2:#fb4934;
+    --green1:#98971a; --green2:#b8bb26;
+    --yellow1:#d79921; --yellow2:#fabd2f;
+    --blue1:#458588;   --blue2:#83a598;
+    --purple1:#b16286; --purple2:#d3869b;
+    --aqua1:#689d6a;   --aqua2:#8ec07c;
+    --orange1:#d65d0e; --orange2:#fe8019;
+  }
+  [data-theme=dark]:root .dark--hidden {
+    display:none
+  }
+  :root {
+    --primary:var(--blue1);
+    --primary-alt:var(--blue2);
+    --font-monospace:"Fira Code","Lucida Console",Monaco,monospace;
+    --font-sans-serif:Verdana,Helvetica,sans-serif;
+    --font-serif:"Roboto Slab",Georgia,serif
+  }
 
-  * { box-sizing: border-box; }
-  body {
-		margin:1em auto;
-		max-width:50em;
-		padding:0 .62em;
-		font:1.2em/1.62 sans-serif;
-    background: #f0efd1 /* #fff8d1 */ 
-	}
 	h1,h2,h3 { line-height:1.2 }
+  a { color: var(--red1); text-decoration: none;  transition: all 0.24s ease-out; font-weight: initial; }
+  a:hover { background: var(--blue1); border-radius: 4px; } 
+
   blockquote { 
-    color: #0000005c; border-left: 4px solid #0006;
+    color: var(--fg); border-left: 4px solid var(--fg0);
     padding-left: 15px;
-    font-size: 18px;
+    font-size: 15pt;
     letter-spacing: -1px;
     font-style: italic;
     margin-inline-start: 0px;
   }
 
-  .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+  body {
+    display: grid;
+    word-wrap: break-word;
+    background: var(--bg);
+    color: var(--fg);
+		font:1.2em/1.62 sans-serif;
+    margin: 0;
+    grid-template-areas: "header" "article";
   }
 
-  a { color:#bf3211; text-decoration: none;  transition: all 0.24s ease-out; font-weight: initial; }
-  a:hover { background: #c2bc82; animation-name: highlight; } 
-  @keyframes highlight {
-    0% { width: 0; opacity: 0; }
-    50% { width: 100%; opacity: 1; }
+  article { 
+    display: grid;
+    max-width: 50rem;
+    margin: auto;
+    grid-area: article;
   }
 
-	@media (prefers-color-scheme: dark){
-		body {color:#e6e6e6; background:#000}
-    blockquote { color: #bebebe; border-left: 4px solid #4d4d4d; }
-    a { color:#99270e }
-	}
-	@media print {
-		body{ max-width:none }
-	}
-
-  ul.s-column { float: left; list-style: none; width: 50%; margin-bottom: auto;}
-  ul.left  { padding-right: 0px; }
-  ul.right { padding-right: 30px; }
- 
-  ul.column { float: left; list-style: none; width: 50%; margin-bottom: auto;}
-  ul.column  > li > a { font-weight: 700; }
-  ul.column > li { margin-bottom: 20px; }
-
-  @media screen and (max-width:70rem) {
-    ul.column { float: none; width: 100%; padding-left: 0;} 
-    ul.s-column { float: none; width: 100%; padding-left: 0;} 
+  header {
+    display: grid;
+    background: var(--bg1); 
+    grid-area: header;
+    padding: .75rem;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "right search theme-toggle";
   }
 
-  .center { 
-    text-align: center;
+  .theme-toggle {
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--yellow1);
+    cursor: pointer;
+    display: flex;
+    grid-area: theme-toggle;
+    margin: 0 1rem;
+  }
+
+  ul.t1 { grid-area: t1; padding: 0 }
+  ul.t2 { grid-area: t2; padding: 0}
+
+  .simple-layout { 
+    display: grid;
+    grid-template-areas: "t1 t2";
+    grid-template-columns: 1fr 1fr;
+  }
+  .simple-layout > ul > li { list-style: none; }
+
+  .complex-layout { 
+    display: grid;
+    grid-template-areas: "t1 t2";
+    grid-template-columns: 1fr 1fr;
+  }
+  .complex-layout > ul > li { margin: 10px; list-style: none; }
+  .complex-layout > ul > li > a { font-weight: 700; }
+
+  .search {
+    grid-area: "search"
+  }
+
+  .search-box {
+    background: var(--bg2);
+    border: 1px solid var(--bg2);
+    border-radius: .2rem;
+    caret-color: var(--fg);
+    color: var(--fg);
+    outline: none;
+    padding: 0 .5rem;
+    width: 100%;
   }
 
 </style>
 
+<script>
+
+function change_theme(theme) { 
+  document.querySelector('html').setAttribute('data-theme', theme);
+}
+
+function search_term() { 
+  console.log('searching');
+}
+
+let links = null;
+
+function update_link_list() {
+  if (links == null) {
+    links = document.querySelectorAll('a');
+  }
+
+  // search for correct thingy 
+  let search_term = document.getElementById('search__text').value;
+  let suggestions = document.getElementById('search__suggestions');
+
+  if (search_term == '') {
+    suggestions.innerHTML = '';
+    return;
+  }
+
+  let found_terms_set = new Set();
+  const search_terms = search_term.split(' ');
+  for (let i = 0; i < links.length; i++){
+    for (let j = 0; j < search_terms.length; j++) {
+      if (links[i].text.toLowerCase().includes(search_terms[j].toLowerCase())) {
+        found_terms_set.add(links[i]);
+      }
+    }
+  }
+
+  let found_terms = found_terms_set.values();
+  suggestions.innerHTML = '';
+  if (found_terms_set.size == 0) {
+    suggestions.innerHTML = `"No results for <strong>${search_term}</strong>"`;
+    return;
+  }
+
+  for (const term of found_terms) {
+    let h = document.createElement('a');
+    h.href = term.href;
+    h.text = term.text;
+    let d = document.createElement('div');
+    d.appendChild(h)
+    if (suggestions.childElementCount > 10) break;
+    suggestions.appendChild(d);
+  }
+
+}
+
+// function() {
+//   let s = this.value,
+//     n = e.search(s, 5, {
+//       enrich: !0
+//     }),
+//     o = new Map;
+//   for (let r of n.flatMap(l => l.result)) o.has(r.href) || o.set(r.doc.href, r.doc);
+//   if (z.innerHTML = "", z.classList.remove("search__suggestions--hidden"), o.size === 0 && s) {
+//     let r = document.createElement("div");
+//     r.innerHTML = `No results for "<strong>${s}</strong>"`, r.classList.add("search__no-results"), z.appendChild(r);
+//     return
+//   }
+//   for (let [r, l] of o) {
+//     let h = document.createElement("a");
+//     h.href = r, h.classList.add("search__suggestion-item"), z.appendChild(h);
+//     let f = document.createElement("div");
+//     f.textContent = l.title, f.classList.add("search__suggestion-title"), h.appendChild(f);
+//     let p = document.createElement("div");
+//     if (p.textContent = l.description, p.classList.add("search__suggestion-description"), h.appendChild(p), z.childElementCount === 5) break
+//   }
+// }
+
+</script>
+
+</head>
+
+<body>
+<header>
+  <button style="grid-area: right; display: none"></button> 
+  <div class="search"> 
+    <input class="search-box" id="search__text" type="search" placeholder="Search..." autocomplete="on" oninput="update_link_list();"></input>
+    <div id="search__suggestions"></div>
+  </div>
+  <button class="theme-toggle dark--hidden" aria-label='Toggle dark mode' onclick="change_theme('dark');"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 3c.132.0.263.0.393.0a7.5 7.5.0 007.92 12.446A9 9 0 1112 2.992z"></path></svg></button>
+  <button class="theme-toggle light--hidden" aria-label='Toggle light mode' onclick="change_theme('light');"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-4 0a4 4 0 108 0 4 4 0 10-8 0"></path><path d="M3 12h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7-.7.7m0 11.4.7.7m-12.1-.7-.7.7"></path></svg></button>
+</header>
 
 <article>
 <h1 style="line-height: 0.8; "> Links</h1>
@@ -82,10 +249,11 @@ date: 6/23
 <i>In our skulls we carry around three pounds of slimy, wet, grayish tissue, corrugated like crumpled toilet paper... Within that gray wet lump is the power to search paths through the great web of causality, and find a road to the seemingly impossible. - <a href="https://www.readthesequences.com/The-Power-Of-Intelligence">Eliezer Yudkowsky</a></i>
 </blockquote>
 
-<div  class="clearfix">
+<div>
 <h2>Blogs</h2>
 </ul>
-<ul class="s-column left">
+<div class="simple-layout">
+<ul class="t1">
 <li><a href="https://samoburja.com/">samo-buraj</a></li>
 <li><a href="http://paulgraham.com/articles.html">paul-graham</a></li>
 <li><a href="https://slatestarcodex.com/about/">scott alexander</a></li>
@@ -98,8 +266,9 @@ date: 6/23
 <li><a href="https://andymatuschak.org/">andy-matuschak</a></li>
 <li><a href="https://eater.net">ben-eater</a></li>
 <li><a href="https://lexfridman.com/">lexfridman</a></li>
+<li><a href="https://www.lesswrong.com/posts/LbbrnRvc9QwjJeics/new-user-s-guide-to-lesswrong">Less Wrong</a></li>
 </ul>
-<ul class="s-column right">
+<ul class="t2">
 <li><a href="https://danluu.com">danluu</a></li>
 <li><a href="https://rfleury.com">ryan-fleury</a></li>
 <li><a href="http://worrydream.com/">bret-victor</a></li>
@@ -110,7 +279,9 @@ date: 6/23
 <li><a href="https://numinous.productions/ttft/">development of transformative tools for thought</a></li>
 <li><a href="https://hpbn.co/">high performance browser networking</a></li>
 <li><a href="https://yurichev.com/">Dennis Yurichev</a></li>
+<li><a href="https://fabiensanglard.net/">Fabien Sanglard</a></li>
 </ul>
+</div>
 </div>
 
 <div>
@@ -170,21 +341,25 @@ date: 6/23
 
 <h2 class="center">Programming</h2>
 
-<div class="clearfix">
-  <ul class="column left">
-    <li ><a href="https://handmadehero.org/">Handmade-Hero</a> is a project by Casey Muratory, created to teach new people how to create games from complete SCRATCH. This is too good to pass by and not watch even just the first 30 epsodes which are not game related</li>
-    <li >If you are looking for a great community to gain much insight and guidence to improve your programming, look no further than <a href="https://handmade.network/">handmade-network</a></li>
-    <li >Every program that wants to utilize the hardware in a good way must use <a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">SIMD</a> to accelerate certain workloads. If you don't know how to use it yet, here is <a href="http://const.me/articles/simd/simd.pdf">great guide to show you</a></li>
-    <li >Low level languages don't manage your memory but, there are many <a href="https://www.gingerbill.org/article/2019/02/01/memory-allocation-strategies-001/">memory allocations strategies </a> to help. By Gingerbill</li>
-    <li >Here are all the <a href="https://akkadia.org/drepper/cpumemory.pdf">things about memory every programmer should know</a> and <a href="https://colin-scott.github.io/personal_website/research/interactive_latency.html">latency numbers every programmer should know</a></li>
-    <li >If you are confused about git like me, <a href="https://blog.plover.com/2022/06/29/#tips">here are some tips</a></li>
+<div class="complex-layout">
+  <ul class="t1">
+    <li><a href="https://handmadehero.org/">Handmade-Hero</a> is a project by Casey Muratory, created to teach new people how to create games from complete SCRATCH. This is too good to pass by and not watch even just the first 30 epsodes which are not game related</li>
+    <li>If you are looking for a great community to gain much insight and guidence to improve your programming, look no further than <a href="https://handmade.network/">handmade-network</a></li>
+    <li>Every program that wants to utilize the hardware in a good way must use <a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">SIMD</a> to accelerate certain workloads. If you don't know how to use it yet, here is <a href="http://const.me/articles/simd/simd.pdf">great guide to show you</a></li>
+    <li>Low level languages don't manage your memory but, there are many <a href="https://www.gingerbill.org/article/2019/02/01/memory-allocation-strategies-001/">memory allocations strategies </a> to help. By Gingerbill</li>
+    <li>There are many <a href="https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf">good programming ideas throughout history</a> people are unaware of. To not repeate failed experiments Niklaus Wirth documented the best prominent ideas</li>
+    <li>Here are all the <a href="https://akkadia.org/drepper/cpumemory.pdf">things about memory every programmer should know</a> and <a href="https://colin-scott.github.io/personal_website/research/interactive_latency.html">latency numbers every programmer should know</a></li>
+    <li><a href="https://www.youtube.com/watch?v=5l2wMgm7ZOk">Black Boxes are so Hard to Reuse</a> is a lecture by Gregor Kiczales. Talking about abstractions and ways you might improve on their flexebility</li>
+    <li>If you are confused about git like me, <a href="https://blog.plover.com/2022/06/29/#tips">here are some tips</a></li>
   </ul>
-  <ul class="column right">
-    <li >There are many <a href="https://people.inf.ethz.ch/wirth/Articles/GoodIdeas.pdf">good programming ideas throughout history</a> people are unaware of. To not repeate failed experiments Niklaus Wirth documented the best prominent ideas</li>
-    <li >Agner Fog is a old optimizations type of guy. He has a <a href="https://www.agner.org/">couple x86 optimization guides at his blog</a> which if you are serious about performance programming you should look at</li>
-    <li >Some people are eager to understand how something works. If you want to understand how poeple might go about building a computer <a href="https://www.coursera.org/learn/build-a-computer">nand2tetris</a> tries to do just that</li>
-    <li ><a href="https://web.archive.org/web/20201111234229/https://beginners.re/RE4B-EN.pdf">reverse engineering book</a> is a great book that shows code written in C -> assembly output. With many details around how how assembly programs work</li>
-    <li >Building a font rasterizer from scratch <a href="https://handmade.network/forums/wip/t/7330-implementing_a_font_reader_and_rasterizer_from_scratch,_part_1__ttf_font_reader.">part1</a> and <a href="https://handmade.network/forums/wip/t/7610-reading_ttf_files_and_rasterizing_them_using_a_handmade_approach,_part_2__rasterization">part2</a> with Sean Barrat's approach <a href="https://nothings.org/gamedev/rasterize/">to rasterization</a></li>
+  <ul class="t2">
+    <li>If you are looking for ways to optimize the bits and bytes your copmuter runs, Agner Fog has a <a href="https://www.agner.org/">couple x86 optimization guides at his blog</a></li>
+    <li>Some people are eager to understand how something works. If you want to understand how poeple might go about building a computer <a href="https://www.coursera.org/learn/build-a-computer">nand2tetris</a> tries to do just that</li>
+    <li><a href="https://web.archive.org/web/20201111234229/https://beginners.re/RE4B-EN.pdf">reverse engineering book</a> is a great book that shows code written in C -> assembly output. With many details around how how assembly programs work</li>
+    <li>Building a font rasterizer from scratch <a href="https://handmade.network/forums/wip/t/7330-implementing_a_font_reader_and_rasterizer_from_scratch,_part_1__ttf_font_reader.">part1</a> and <a href="https://handmade.network/forums/wip/t/7610-reading_ttf_files_and_rasterizing_them_using_a_handmade_approach,_part_2__rasterization">part2</a> with Sean Barrat's approach <a href="https://nothings.org/gamedev/rasterize/">to rasterization</a></li>
+    <li><a href="https://craftinginterpreters.com/contents.html">Crafting Interperters</a> is a great book guiding it's readers on the path of language design and compiler creation</li>
+    <li><a href="https://floooh.github.io/2018/06/17/handles-vs-pointers.html">Handles are the better pointers!</a> this blog post will show you why that is along with how to implement handles yourself</li>
+    <li><a href="https://people.inf.ethz.ch/wirth/Miscellaneous/IEEE-Annals.pdf">Brief histroy of software engineering</a> by Niklaus Wirth is a must read for young programmers, giving perspective of time to the young field of computer programming</li>
   </ul>
 </ul>
 </div>
@@ -194,21 +369,16 @@ date: 6/23
 <li><a href="https://www.phatcode.net/res/223/files/html/toc.html">old x86 assembly</a></li>
 <li><a href="https://travisdowns.github.io/">software performance matters</a></li>
 <li><a href="https://halt.software/dead-simple-layouts/">dead simple layouts</a></li>
-<li><a href="https://floooh.github.io/2018/06/17/handles-vs-pointers.html">handles vs pointers</a></li>
 <li><a href="https://hillelwayne.com/post/why-dont-people-use-formal-methods/">why don't people use formal methods</a></li>
 <li><a href="https://github.com/srush/GPU-Puzzles">GPU Puzzles (learn how to program your gpu, cuda)</a></li>
 
-<li><a href="https://www.youtube.com/watch?v=5l2wMgm7ZOk">Black Boxes are so Hard to Reuse - video</a></li>
-
 <li><a href="https://youtu.be/uehGqieEbus">3d-programming-from-scratch</a></li>
 <li><a href="https://www.youtube.com/watch?v=ajv46BSqcK4&t=794s">GJK Algorithm</a></li>
-<li><a href="https://craftinginterpreters.com/contents.html">craftinginterperters</a></li>
 <li><a href="https://mu.krj.st/wave/">creating wav files</a></li>
 <li><a href="https://www.youtube.com/watch?v=MXs_vkc8hpY">fluid simulation</a> & <a href="https://www.youtube.com/watch?v=iKAVRgIrUOU">How to write an Eulerian fluid simulator with 200 lines of code</a></li>
 
 <li><a href="https://bestmotherfucking.website/">best motherfucking website</a></li>
 
-<li><a href="https://people.inf.ethz.ch/wirth/Miscellaneous/IEEE-Annals.pdf">brief histroy of software engineering</a></li>
 <li><a href="https://people.inf.ethz.ch/wirth/Miscellaneous/ComputersAndComputing.pdf">computers and copmuting</a></li>
 
 
@@ -228,7 +398,6 @@ date: 6/23
 <li><a href="http://mattmahoney.net/dc/dce.html">Data Compression Explained - book</a></li>
 <li><a href="https://note.com/ruiu/n/n9948f0cc3ed3">worse is better</a></li>
 <li><a href="http://norvig.com/21-days.html#answers">learn programming in 10 years</a></li>
-
 <li><a href="https://pomb.us/build-your-own-react/">build your own react</a></li>
 <li><a href="https://gasiulis.name/vector-graphics-on-gpu/">vector graphics on gpu</a></li>
 
@@ -301,10 +470,13 @@ date: 6/23
 <li><a href="https://hubermanlab.com/wp-content/uploads/2021/06/Protocols_Endurance_VersionB.pdf">hubermanlab - 4 TYPES of ENDURANCE TRAINING: SUMMARY from Episode #23</a></li>
 <li><a href="https://blueprint.bryanjohnson.co/">Blueprint - slowing down your ageing?</a></li>
 
+<li><a href="https://akreson.github.io/en/posts/entropy-encoding-part1/">Entropy coding for beginngers (by a beginner)</a></li>
+
 <li><a href="https://en.algorithmica.org/hpc/">high-performance-computing</a></li>
+<li><a href="https://fabiensanglard.net/floating_point_visually_explained/">Intuitive explenation of floating point arithmetic</a></li>
 
 <li><a href="https://samoburja.com/essays/">Great founder theory</a></li>
-<li><a href="https://www.youtube.com/watch?v=M4LRHJlijVU&t=4437s">1177 B.C.: When Civilization Collapsed | Eric Cline</a></li>
+<li><a href="https://www.youtube.com/watch?v=M4LRHJlijVU&t=4437s">1177 B.C.: When Civilization Collapsed | Eric Cline - probably should look into this book more than this video</a></li>
 <li><a href="https://michaelshermer.substack.com/archive">The Skeptic</a></li>
 
 <li><a href="https://graymirror.substack.com/p/1-a-general-theory-of-collaboration">general theory of collaboration</a></li>
@@ -328,12 +500,9 @@ date: 6/23
 <h2>Things that might never get sorted</h2>
 <ul>
   <li><a href="https://www.eblong.com/zarf/markov/">Fun With Markov Chains</a></li>
-  <li><a href="https://www.cell.com/cancer-cell/pdf/S1535-6108(02)00133-2.pdf">Can a biologist fix a radio?—Or, what I
-learned while studying apoptosis</a></li>
-
-
+  <li><a href="https://www.cell.com/cancer-cell/pdf/S1535-6108(02)00133-2.pdf">Can a biologist fix a radio?—Or, what I learned while studying apoptosis</a></li>
 </ul>
 
 </article>
-
+</body>
 </html>
