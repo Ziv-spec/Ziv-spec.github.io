@@ -55,40 +55,42 @@ def generate_posts(path):
     for line in lines[4:]: 
       l = line[:2] if len(line) > 0 else line
       if l == '<li' or l == '' or l == '<h' or l == '<p' or l == '\n': l = line + '\n'
-      else: l = '<p>' + line + '</p>\n'
+      else: l = line + '\n'  # l = '<p>' + line + '</p>\n'
       content += l
       
   result = f"""
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="light" lang="en">
 <head>
 <title>{POST_TITLE}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="article" />
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="style2.css">
+<script src="side.js"></script>
 </head>
 
-<body style="background-color: #{SITE_BACKGROUND}">
-<main class="container flex">
-<div class="side"><div class="menu"> 
-<h4><a href="/" style="color: #626262; text-decoration: solid;">{SITE_NAME}</a></h4>
-<nav id="navigation-bar"></nav>
-</div></div>
+<header>
+  <button style="grid-area: right; display: none"></button> 
+  <div class="search"> 
+    <input class="search-box" id="search__text" type="search" placeholder="Search..." autocomplete="on" oninput="update_link_list();"></input>
+    <div id="search__suggestions"></div>
+  </div>
+  <button class="theme-toggle dark--hidden" aria-label='Toggle dark mode' onclick="change_theme('dark');"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 3c.132.0.263.0.393.0a7.5 7.5.0 007.92 12.446A9 9 0 1112 2.992z"></path></svg></button>
+  <button class="theme-toggle light--hidden" aria-label='Toggle light mode' onclick="change_theme('light');"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-4 0a4 4 0 108 0 4 4 0 10-8 0"></path><path d="M3 12h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7-.7.7m0 11.4.7.7m-12.1-.7-.7.7"></path></svg></button>
+</header>
 
-<div class="wrapper" style="background-color: #{SITE_FOREGROUND}" >
-<h1 style="line-height: 0.8; ">{POST_TITLE}</h1>
-<i>{POST_DATE}</i>
+<article>
+<h1 style="text-align: center;font-size: xxx-large;margin: 10pt;">{POST_TITLE}</h1>
 {content}
-</div>
+</article>
 
-<div class="side"> <div class="menu"></div></div>
-
-<script src="side.js"></script>
 </body>
 </main>
 </body>
 </html>
   """
+
+  """"<script src="side.js"></script>"""
 
   with open('posts/' + path, 'w', encoding='utf-8') as post:
     post.write(result)
