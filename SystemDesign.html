@@ -7,17 +7,55 @@ date: 4/23
 
 <p><img src="https://www.notion.so/image/https%3A%2F%2Fwww.notion.so%2Fimages%2Fpage-cover%2Fmet_frederic_edwin_church_1871.jpg?id=fc64c144-f9a7-4931-b62e-d9488430f144&table=block&spaceId=17002b06-857b-4bea-a329-f62215cd0a31&width=2000&userId=65ccfcd9-7cd5-4655-8c4e-c84b9bbeab67&cache=v2" alt=""> </img></p>
 
+
 For some time now I have had a growing interest in understanding how complex systems behave. This post contains all my current understanding of designing better systems for the future.
+
+First I want to show the importance of thinking about complex systems and what I would like to show here. Then, I will talk about meaning and where does it lay, giving things meaning by isomorphism, and compression as a method for finding consise meaning. Next is how do we as humans interpret complex systems and understand them by holistic or reductionistic approaches, or when building systems we use abstraction as a way to create the systems themselves, which is essentially a techniqe for compressing the meaning of the underlying complexity. I will continue with showing leaky abstractions and how they effect design, and the concept of irriducability with it's consequences. Onwards there will be a chapter on types of systems fragile robust and antifragile. Then, properties that we might want to include and categorize as fragile robust and antifragile which might be redundency, degeneracy. After these chapters will talk about different approaches 
+
+What we want to build
+  Challanges
+    what are we trying to solve?
+    complexity/simplicity vs easy/hard 
+  Fragile, Robust, Antifragile
+    fragile systems 
+    antifragile systems
+    reduendency vs degeneracy 
+    examples
+  Generalist vs specialist approaches
+How do we understand and build such systems
+  Meaning (to better analyze systems we have to understand)
+    Where does it lay
+    isomorphism
+    compression
+  Interpreting meaning (practically how do we make things meaningful)
+    holism and reductionism to interpret[^1]
+    abstraction to built interpretable things
+  Challanges interpreting 
+    Leaky abstractions
+    irriducability
+History is our best friend
+
+
+
+[^1]: ray dalio takes all the parts to make larger indicators and principles from them with high amounts of effort to make sure he doesn't make large mistakes as he updates his models, while taleb just makes sure to make investments with high upside and low downside giving a potentially more robust solution as it accounts for mistakes and yet both have value
+
+
 
 <h2>Meaning</h2>
 
-<p>
-Life is built around signaling, this text is itself a signal with some meaning I try to convey, reading only half of this text will not allow you to comprehend it's full meaning, just like when encountering many words one doesn't know will result in confusion. So where does meaning lay? In his seminal text Godel Escher Bach, Hofstadter states that meaning itself is a strange dance between content and interpretation. For meaning to be found, content, which by itself meaningless is interpreted. When standing on their own, content and interpretation are interchangeable. GEB illustrates this by imagining a world where DNA is similar to all organisms, and the decoding mechanism in the environment differs. For example a cat and a monkey would contain the same DNA, but the decoding mechanisms which made them grow is what differentiates between them. The genetic information would then not be contained in the DNA but in the decoding mechanisms themselves. The fact that the decoding mechanisms for life are similar while DNA varies is what makes DNA the <i>content</i> and decoding mechanisms the <i>interpretation</i>.
-</p>
+Life is built around signaling, this text is itself a signal with some meaning I try to convey, reading only half of this text will not allow you to comprehend it's full meaning, just like when encountering many words one doesn't know will result in confusion. So where does meaning lay? 
 
-<p>
-Now what good does it do to know where is meaning without knowing how do we humans give meaning to the world? Think about how words contain meaning even though they exist in our heads. 
-</p>
+In his seminal text Godel Escher Bach, Hofstadter states that meaning itself is a strange dance between content and interpretation. For meaning to be found, content, which by itself meaningless must be interpreted. When standing on their own, content and interpretation are interchangeable. GEB illustrates this by imagining a world where DNA is similar to all organisms and the decoding mechanism is what makes them unique. For example a cat and a fish would contain the same DNA, but the decoding mechanisms which made them grow is what differentiates between them. The genetic information would then not be contained in the DNA but in the decoding mechanisms themselves. The fact that the decoding mechanisms for life are similar while DNA varies is what makes DNA the <i>content</i> and decoding mechanisms the <i>interpreter</i>.
+
+, compression is an art of distilling information into it's essence therefore condencing meaning. 
+
+Compression will forever stay an art because it is uncomputable. The problem can be restated as finding the smallest program that can reconstruct a given file. This problem, better known as the Kolomogorov complexity of a program, has been proven uncomputable. It would requires running all possible programs that produce the file and picking the shortest one. In doing so we might encounter programs that don't halt, making our imagineary program never halt, thus never produce a result. This problem is called the Halting problem which is known to be undecideable or in other words uncomputable, making our first problem of finding the Kolomogorov complexity also uncomputable.
+
+
+
+Another concept introduced is <i>isomorphism</i>. The term refers to the equivalence of meaning in two formal systems given by their consistancy when compared. e.g. Imagine you want to cook a couple eggs for breakfest. You first go to your refrigirator, take 2 eggs and put them on the counter. Since 2 eggs are no enough you return to your refrigirator and take 3 more. You then count how many there are on the counter and you find 5 eggs on the counter. Now you have probably already known that taking 2 eggs and adding 3 more eggs would result in 5 eggs. How did you know that? The answer is that you knew that the formal expression 2+3=5 is equivalent in meaning to the counting of eggs. Since you have learned this from a young age you are capable of computing the result easily. This equivalence or should I say isomorphism is a powerful concept which allows us to take the meaning of one and apply it onto the other. The real world is the only thing that is meaninful, since we live in it we give some "inherit" meaning to things in the world. In our example, the counting of eggs being a real physical action has meaning, while some expression we made up has to "gain" meaning by isomorphism as we say that the action of counting 2 eggs and 3 eggs is equivalent to addition of 2 and 3. 
+
+
 
 
 

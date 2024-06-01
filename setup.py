@@ -54,8 +54,8 @@ def generate_posts(path):
 
     for line in lines[4:]: 
       l = line[:2] if len(line) > 0 else line
-      if l == '<li' or l == '' or l == '<h' or l == '<p' or l == '\n': l = line + '\n'
-      else: l = line + '\n'  # l = '<p>' + line + '</p>\n'
+      if l == '<li' or l == '' or l == '<h' or l == '<p' or l == '\n' or l == '<i': l = line + '\n'
+      else: l = '<p>' + line + '</p>\n' # l = line + '\n'  
       content += l
       
   result = f"""

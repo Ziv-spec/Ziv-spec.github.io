@@ -73,7 +73,7 @@ body {
 
 article { 
   display: grid;
-  max-width: 50rem;
+  max-width: 48rem;
   margin: auto;
   grid-area: article;
 }
